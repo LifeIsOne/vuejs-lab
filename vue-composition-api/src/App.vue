@@ -11,10 +11,11 @@
 </template>
 
 <script>
-import { isRef, ref } from 'vue';
+import { isRef, onBeforeMount, onMounted, ref } from 'vue';
 
 export default {
 	setup() {
+		console.log('setup 셋업됨!');
 		const nomalMsg = '기본형 메세지';
 		const addNMsg = () => {
 			nomalMsg.value = nomalMsg.value + '🤔';
@@ -24,8 +25,15 @@ export default {
 		const addMsg = () => {
 			reactiveMsg.value = reactiveMsg.value + '🤔';
 		};
-		console.log('isRef(nomalMsg) : ' + isRef(nomalMsg));
-		console.log('isRef(reactiveMsg) : ' + isRef(reactiveMsg));
+		// console.log('isRef(nomalMsg) : ' + isRef(nomalMsg));
+		// console.log('isRef(reactiveMsg) : ' + isRef(reactiveMsg));
+
+		onMounted(() => {
+			console.log('onMounted 마운트 됨!');
+		});
+		onBeforeMount(() => {
+			console.log('onBeforeMount 마운트 전!');
+		});
 
 		return {
 			nomalMsg,
