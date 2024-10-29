@@ -5,19 +5,21 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
+
 export default {
-	data() {
+	setup() {
+		const counter = ref(0);
+
+		const increment = () => counter.value++;
+
+		onMounted(() => {
+			console.log('컴포넌트가 마운트 됨!');
+		});
 		return {
-			counter: 0,
+			counter,
+			increment,
 		};
-	},
-	methods: {
-		increment() {
-			this.counter++;
-		},
-	},
-	mounted() {
-		console.log('컴포넌트가 마운트 됐습니다.');
 	},
 };
 </script>
