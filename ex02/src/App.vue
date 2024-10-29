@@ -7,5 +7,5 @@
 export default {};
 </script>
 <style>
-@import "./assets/base.css";
+@import "./src/assets/base.css";
 </style>
