@@ -25,8 +25,8 @@ export default {
 		const addMsg = () => {
 			reactiveMsg.value = reactiveMsg.value + '🤔';
 		};
-		// console.log('isRef(nomalMsg) : ' + isRef(nomalMsg));
-		// console.log('isRef(reactiveMsg) : ' + isRef(reactiveMsg));
+		console.log('isRef(nomalMsg) : ' + isRef(nomalMsg));
+		console.log('isRef(reactiveMsg) : ' + isRef(reactiveMsg));
 
 		onMounted(() => {
 			console.log('onMounted 마운트 됨!');
