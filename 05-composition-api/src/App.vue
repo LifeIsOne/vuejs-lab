@@ -1,45 +1,29 @@
 <template>
-	<div>
-		<h1>기본형 메세지</h1>
-		<p>{{ nomalMsg }}</p>
-		<button v-on:click="addNMsg">메세지 추가</button>
-
-		<h1>반응형 메세지</h1>
-		<p>{{ reactiveMsg }}</p>
-		<button v-on:click="addMsg">메세지 추가</button>
-	</div>
+	<h1>보간법 ```v-once```디렉티브</h1>
+	<div>{{ msg }}</div>
+	<p v-once>{{ msg }}</p>
+	<button @click="msg = msg + '🖐'">Click Me</button>
+	<hr />
+	<p>{{ h1Text }}</p>
+	<p v-html="h1Text"></p>
+	<hr />
+	<h1>속성 바인딩 ```v-bind```</h1>
+	<div v-bind:title="dynamicMsg">마우스를 올려보세요</div>
 </template>
 
 <script>
-import { isRef, onBeforeMount, onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
 export default {
 	setup() {
-		console.log('setup 셋업됨!');
-		const nomalMsg = '기본형 메세지';
-		const addNMsg = () => {
-			nomalMsg.value = nomalMsg.value + '🤔';
-		};
-
-		const reactiveMsg = ref('반응형 메세지');
-		const addMsg = () => {
-			reactiveMsg.value = reactiveMsg.value + '🤔';
-		};
-		console.log('isRef(nomalMsg) : ' + isRef(nomalMsg));
-		console.log('isRef(reactiveMsg) : ' + isRef(reactiveMsg));
-
-		onMounted(() => {
-			console.log('onMounted 마운트 됨!');
-		});
-		onBeforeMount(() => {
-			console.log('onBeforeMount 마운트 전!');
-		});
+		const msg = ref('안녕 :3');
+		const h1Text = ref('<h1>HTML 사용하기 ```v-html```디렉티브</h1>');
+		const dynamicMsg = ref('반가워요! ^o^/');
 
 		return {
-			nomalMsg,
-			reactiveMsg,
-			addNMsg,
-			addMsg,
+			msg,
+			h1Text,
+			dynamicMsg,
 		};
 	},
 };
