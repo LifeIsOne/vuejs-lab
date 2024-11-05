@@ -6,3 +6,10 @@
 ## 1. Plugin
 - ESLint
 - Prettier
+
+## 디렉티브
+- 01 
+- 02 Vue3사용하기
+- 03 ESLint, Prettier 설정
+- 04 Vue API
+- 05 Composition API
