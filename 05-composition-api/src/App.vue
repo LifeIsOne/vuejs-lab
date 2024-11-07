@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<button @click="increment">count : {{ state.count }}</button>
-		<button @click="increment">deep count : {{ state.deep.count }}</button>
+		<p>{{ msg.value }}</p>
+		<button @click="addMsg">클릭하세요!</button>
 	</div>
 </template>
 
@@ -10,20 +10,18 @@ import { reactive } from 'vue';
 
 export default {
 	setup() {
-		const state = reactive({
-			count: 0,
-			deep: {
-				count: 0,
-			},
+		let msg = reactive({
+			value: '안녕하세요!',
 		});
-		const increment = () => {
-			state.count++;
-			state.deep.count++;
+		const addMsg = () => {
+			msg.value = msg.value + '🏃🏻‍➡️';
 		};
+		console.log('msg', msg.value);
+		console.log('msg typeof', typeof msg.value);
 
 		return {
-			state,
-			increment,
+			msg,
+			addMsg,
 		};
 	},
 };
