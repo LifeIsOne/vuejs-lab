@@ -20,10 +20,10 @@ export default {
 		const hasErr = ref(false);
 
 		// 동적 바인딩 안됨@@
-		// const classObejct = reactive({
-		// 	active: true,
-		// 	'text-danger': false,
-		// });
+		const classObjectR = reactive({
+			active: true,
+			'text-danger': false,
+		});
 
 		// computed 사용하여 동적 바인딩
 		const classObject = computed(() => {
@@ -46,6 +46,7 @@ export default {
 			toggle,
 			hasErr,
 			classObject,
+			classObjectR,
 			activeClass,
 			errClass,
 		};
