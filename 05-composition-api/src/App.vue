@@ -1,42 +1,22 @@
 <template>
-	<div>
-		<div class="text" :class="classObject">텍스트 입니다.</div>
-		<button @click="toggle">토글 ( toggle )</button>
-		<button @click="hasErr = !hasErr">에러 토글 ( error toggle )</button>
+	<div :style="styleObject">
+		Lorem ipsumdolor sit, amet consectetur adipisicing elit. Labore ea
+		voluptates voluptatum repellat dolore ducimus a nihil similique harum cum!
+		Accusamus fugit possimus ipsam. Iste fuga libero consequuntur unde cumque!
 	</div>
 </template>
 
 <script>
-import { computed, reactive, ref } from 'vue';
+import { reactive } from 'vue';
 
 export default {
 	setup() {
-		const isActive = ref(true);
-		const hasErr = ref(false);
-
-		// 동적 바인딩 안됨@@
-		// const classObejct = reactive({
-		// 	active: true,
-		// 	'text-danger': false,
-		// });
-
-		const classObject = computed(() => {
-			return {
-				active: isActive.value,
-				'text-danger': hasErr.value,
-			};
+		const styleObject = reactive({
+			color: '#c55',
+			fontSize: '13px',
 		});
 
-		const toggle = () => {
-			isActive.value = !isActive.value;
-		};
-
-		return {
-			isActive,
-			toggle,
-			hasErr,
-			classObject,
-		};
+		return { styleObject };
 	},
 };
 </script>
@@ -44,11 +24,4 @@ export default {
 <style lang="scss" scoped></style>
 <style>
 @import './assets/base.css';
-.active {
-	color: #fd5;
-	font-weight: bold;
-}
-.text-danger {
-	color: #f00;
-}
 </style>

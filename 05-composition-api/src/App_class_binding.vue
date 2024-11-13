@@ -25,6 +25,7 @@ export default {
 		// 	'text-danger': false,
 		// });
 
+		// computed 사용하여 동적 바인딩
 		const classObject = computed(() => {
 			return {
 				active: isActive.value,
