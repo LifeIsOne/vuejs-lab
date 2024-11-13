@@ -1,11 +1,19 @@
 <template>
-	<div></div>
+	<div>
+		<h2 v-if="visible">안녕하세요!</h2>
+	</div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
 	setup() {
-		return {};
+		const visible = ref(true);
+
+		return {
+			visible,
+		};
 	},
 };
 </script>
