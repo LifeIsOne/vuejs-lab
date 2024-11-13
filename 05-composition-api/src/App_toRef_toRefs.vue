@@ -16,6 +16,7 @@ export default {
 			title: '제목1',
 			content: '내용1',
 		});
+		s;
 
 		// const { user, title } = toRefs(board);
 		const user = toRef(board, 'user');
