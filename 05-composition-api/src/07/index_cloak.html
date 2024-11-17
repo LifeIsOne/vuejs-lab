@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="src/assets/base.css1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vite App</title>
+    <style>
+      [v-cloak]{
+        display: none ;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p v-cloak>{{ msg }}</p>
+    </div>
+    <script>
+      const { createApp, ref } = Vue
+    
+      setTimeout(() => {
+        createApp({
+        setup() {
+          const msg = '안녕 반가워!!'
+          return {
+            msg
+          }
+        }
+      }).mount('#app')
+      }, 3000)
+      
+    </script>
+  </body>
+</html>
