@@ -1,11 +1,12 @@
 <template>
 	<div>
 		<div id="modifiers">
-			<div @click="clickDiv">
+			<div @click.capture="clickDiv">
 				div 영역
-				<p @click="clickP">
+				<p @click.capture="clickP">
 					p영역
-					<span @click.stop="clickSpan"> span영역 </span>
+					<!-- <span @click.stop="clickSpan"> span영역 </span> -->
+					<span @click="clickSpan"> span영역 </span>
 					<a href="https://naver.com" @click.prevent.stop="clickA"
 						>a영역 naver웹페이지 이동하기</a
 					>
@@ -20,8 +21,7 @@ export default {
 	setup() {
 		const clickDiv = () => {
 			console.log('clickDiv');
-			location.href =
-				'https://elated-value-48d.notion.site/15-VueJS-Vue3-11ad91c8ac0e8066be2ae42692a74129?pvs=4';
+			// location.href ='https://elated-value-48d.notion.site/15-VueJS-Vue3-11ad91c8ac0e8066be2ae42692a74129?pvs=4';
 		};
 		const clickP = () => {
 			console.log('clickP');
