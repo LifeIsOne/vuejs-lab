@@ -64,6 +64,18 @@
 			<option value="kim">kim</option>
 		</select>
 		<p>{{ selectValue }}</p>
+		<hr />
+
+		<h1>여러개의 checkbox</h1>
+		<label>
+			<input type="checkbox" value="denny" v-model="checkboxValues" />
+			Denny
+			<input type="checkbox" value="yongju" v-model="checkboxValues" />
+			Yongju
+			<input type="checkbox" value="lee" v-model="checkboxValues" />
+			Lee
+		</label>
+		<p>선택 됨 {{ checkboxValues }}</p>
 	</div>
 </template>
 
@@ -77,6 +89,7 @@ export default {
 		const checkboxValue = ref('🤔');
 		const raidoValue = ref('Red');
 		const selectValue = ref('kenneth');
+		const checkboxValues = ref([]);
 
 		return {
 			inputValue,
@@ -84,6 +97,7 @@ export default {
 			checkboxValue,
 			raidoValue,
 			selectValue,
+			checkboxValues,
 		};
 	},
 };
