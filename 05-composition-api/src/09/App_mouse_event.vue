@@ -31,7 +31,7 @@ export default {
 			console.log('clickSpan');
 			alert('좋아요를 누르셨습니다!');
 		};
-		const clickA = () => {
+		const clickA = e => {
 			alert('a태그를 누르셨습니다.');
 		};
 

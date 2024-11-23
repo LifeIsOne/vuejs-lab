@@ -41,6 +41,7 @@ export default [
 					arrowParens: 'avoid', // 화살표 함수에서 매개변수가 하나일 때 () 생략
 				},
 			],
+			'no-unused-vars': 'off',
 		},
 	},
 ];
