@@ -17,7 +17,12 @@
 
 		<h1>input태그 checkbox타입</h1>
 		<label for="checkbox">{{ checkboxValue }}</label>
-		<input type="checkbox" v-model="checkboxValue" />
+		<input
+			type="checkbox"
+			v-model="checkboxValue"
+			true-value="😀"
+			false-value="🤔"
+		/>
 		<!-- <input type="checkbox" :checked="checkboxValue" @change="event => (checkboxValue = event.target.checked)"/> -->
 		<hr />
 
@@ -49,6 +54,16 @@
 			파란색
 		</label>
 		<p>{{ raidoValue }}</p>
+		<hr />
+
+		<h1>select태그</h1>
+		<select :value="selectValue" @change="e => (selectValue = e.target.value)">
+			<!-- <select v-model="selectValue"> -->
+			<option value="kenneth">kenneth</option>
+			<option value="minsu">minsu</option>
+			<option value="kim">kim</option>
+		</select>
+		<p>{{ selectValue }}</p>
 	</div>
 </template>
 
@@ -59,14 +74,16 @@ export default {
 	setup() {
 		const inputValue = ref('');
 		const textareaValue = ref('');
-		const checkboxValue = ref(true);
+		const checkboxValue = ref('🤔');
 		const raidoValue = ref('Red');
+		const selectValue = ref('kenneth');
 
 		return {
 			inputValue,
 			textareaValue,
 			checkboxValue,
 			raidoValue,
+			selectValue,
 		};
 	},
 };
