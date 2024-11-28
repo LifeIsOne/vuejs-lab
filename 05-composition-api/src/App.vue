@@ -3,43 +3,59 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { reactive, ref, watch } from 'vue';
 
 export default {
 	setup() {
-		const msg = ref('');
-		watch(msg, (newValue, oldValue) => {
-			// DOM -
+		const x = ref(0);
+		const y = ref(0);
 
-			// API -
-
-			// 사ㅇ태 변경
-			console.log('newValue', newValue);
-			console.log('oldValue', oldValue);
-		});
-
-		// const x = ref(0);
-		// const y = ref(0);
-
-		// watch(x, () => {
-		// 	console.log('x 는 ${newX}');
-		// });
-
-		// // getter 함수
+		// //# getter 함수
 		// watch(
 		// 	() => x.value + y.value,
 		// 	sum => {
-		// 		console.log('x + y = ${sum}');
+		// 		console.log('x + y = ', sum);
 		// 	},
 		// );
 
-		// // array 배열
-		// watch([x, () => y.value], ([newX, newY]) => {
-		// 	console.log(`x is ${newX} and y is ${newY}`);
+		// # array 배열
+		// watch([x, y], ([newX, newY]) => {
+		// 	console.log('newX :', +newX, 'newY :', +newY);
 		// });
 
+		//# object
+		const obj = reactive({
+			count: 0,
+		});
+
+		// watch(obj, (newValue, oldValue) => {
+		// 	console.log('newValue : ', newValue, 'oldValue : ', oldValue);
+		// });
+
+		// // object의 하나의 속성만 감시 - getter함수
+		// watch(
+		// 	() => obj.count,
+		// 	(newValue, oldValue) => {
+		// 		console.log('newValue : ', newValue, 'oldValue : ', oldValue);
+		// 	},
+		// );
+
+		const user = reactive({
+			name: 'Matthew',
+			age: 29,
+			hobby: 'reading',
+			obj: {
+				count: 0,
+			},
+		});
+
+		watch(user, newValue => {
+			console.log('newValue: ', newValue);
+		});
 		return {
-			msg,
+			// x,
+			// y,
+			obj,
 		};
 	},
 };
