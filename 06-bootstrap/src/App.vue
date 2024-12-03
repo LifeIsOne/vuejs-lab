@@ -1,5 +1,6 @@
 <template>
-	<BNavbar v-b-color-mode="'dark'" toggleable="sm" variant="primary">
+	<!-- 네비게이션바 시작 -->
+	<BNavbar v-b-color-mode="'dark'" toggleable="sm" variant="dark">
 		<BNavbarBrand href="#">NavBar</BNavbarBrand>
 		<BNavbarToggle target="nav-collapse" />
 		<BCollapse id="nav-collapse" is-nav>
@@ -30,11 +31,15 @@
 			</BNavForm>
 		</BCollapse>
 	</BNavbar>
+	<!-- 네비게이션바 끝 -->
+
+	<!-- 메인 시작 -->
 	<main>
-		<div class="container">
+		<div class="container py-5">
 			<BContainer class="bv-example-row">
-				<BRow>
-					<BCol>
+				<BRow class="g-2">
+					<!-- <BRow gutter-y="10"> -->
+					<BCol cols="4">
 						<BCard
 							title="Card Title"
 							img-src="https://picsum.photos/id/25/600/300"
@@ -47,10 +52,10 @@
 								Some quick example text to build on the card title and make up
 								the bulk of the card's content.
 							</BCardText>
-							<BButton href="#" variant="primary">Go somewhere</BButton>
+							<BButton href="#" variant="dark">Go somewhere</BButton>
 						</BCard>
 					</BCol>
-					<BCol>
+					<BCol cols="4">
 						<BCard
 							title="Card Title"
 							img-src="https://picsum.photos/id/25/600/300"
@@ -63,10 +68,10 @@
 								Some quick example text to build on the card title and make up
 								the bulk of the card's content.
 							</BCardText>
-							<BButton href="#" variant="primary">Go somewhere</BButton>
+							<BButton href="#" variant="dark">Go somewhere</BButton>
 						</BCard>
 					</BCol>
-					<BCol>
+					<BCol cols="4">
 						<BCard
 							title="Card Title"
 							img-src="https://picsum.photos/id/25/600/300"
@@ -79,7 +84,55 @@
 								Some quick example text to build on the card title and make up
 								the bulk of the card's content.
 							</BCardText>
-							<BButton href="#" variant="primary">Go somewhere</BButton>
+							<BButton href="#" variant="dark">Go somewhere</BButton>
+						</BCard>
+					</BCol>
+					<BCol cols="4">
+						<BCard
+							title="Card Title"
+							img-src="https://picsum.photos/id/25/600/300"
+							img-alt="Image"
+							img-top
+							tag="article"
+							style="max-width: 20rem"
+						>
+							<BCardText>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</BCardText>
+							<BButton href="#" variant="dark">Go somewhere</BButton>
+						</BCard>
+					</BCol>
+					<BCol cols="4">
+						<BCard
+							title="Card Title"
+							img-src="https://picsum.photos/id/25/600/300"
+							img-alt="Image"
+							img-top
+							tag="article"
+							style="max-width: 20rem"
+						>
+							<BCardText>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</BCardText>
+							<BButton href="#" variant="dark">Go somewhere</BButton>
+						</BCard>
+					</BCol>
+					<BCol cols="4">
+						<BCard
+							title="Card Title"
+							img-src="https://picsum.photos/id/25/600/300"
+							img-alt="Image"
+							img-top
+							tag="article"
+							style="max-width: 20rem"
+						>
+							<BCardText>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</BCardText>
+							<BButton href="#" variant="dark">Go somewhere</BButton>
 						</BCard>
 					</BCol>
 				</BRow>
