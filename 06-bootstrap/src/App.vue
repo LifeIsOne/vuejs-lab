@@ -1,5 +1,5 @@
 <template>
-	<BNavbar v-b-color-mode="'dark'" toggleable="lg" variant="primary">
+	<BNavbar v-b-color-mode="'dark'" toggleable="sm" variant="primary">
 		<BNavbarBrand href="#">NavBar</BNavbarBrand>
 		<BNavbarToggle target="nav-collapse" />
 		<BCollapse id="nav-collapse" is-nav>
@@ -30,6 +30,62 @@
 			</BNavForm>
 		</BCollapse>
 	</BNavbar>
+	<main>
+		<div class="container">
+			<BContainer class="bv-example-row">
+				<BRow>
+					<BCol>
+						<BCard
+							title="Card Title"
+							img-src="https://picsum.photos/id/25/600/300"
+							img-alt="Image"
+							img-top
+							tag="article"
+							style="max-width: 20rem"
+						>
+							<BCardText>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</BCardText>
+							<BButton href="#" variant="primary">Go somewhere</BButton>
+						</BCard>
+					</BCol>
+					<BCol>
+						<BCard
+							title="Card Title"
+							img-src="https://picsum.photos/id/25/600/300"
+							img-alt="Image"
+							img-top
+							tag="article"
+							style="max-width: 20rem"
+						>
+							<BCardText>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</BCardText>
+							<BButton href="#" variant="primary">Go somewhere</BButton>
+						</BCard>
+					</BCol>
+					<BCol>
+						<BCard
+							title="Card Title"
+							img-src="https://picsum.photos/id/25/600/300"
+							img-alt="Image"
+							img-top
+							tag="article"
+							style="max-width: 20rem"
+						>
+							<BCardText>
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</BCardText>
+							<BButton href="#" variant="primary">Go somewhere</BButton>
+						</BCard>
+					</BCol>
+				</BRow>
+			</BContainer>
+		</div>
+	</main>
 </template>
 
 <script>
