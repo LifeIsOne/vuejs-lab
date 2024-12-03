@@ -32,7 +32,7 @@
 		</BCollapse>
 	</BNavbar>
 	<!-- 네비게이션바 끝 -->
-	dd
+
 	<!-- 메인 시작 -->
 	<main>
 		<div class="container py-5">
