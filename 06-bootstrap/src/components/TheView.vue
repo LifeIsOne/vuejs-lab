@@ -29,7 +29,9 @@
 </template>
 
 <script>
+import AppCard from './AppCard.vue';
 export default {
+	components: { AppCard },
 	setup() {
 		return {};
 	},

@@ -11,5 +11,5 @@ app.use(createBootstrap()); // Important
 app.mount('#app');
 
 // 전역 등록하기
-import AppCard from './components/AppCard.vue';
-app.component('AppCard', AppCard);
+// import AppCard from './components/AppCard.vue';
+// app.component('AppCard', AppCard);

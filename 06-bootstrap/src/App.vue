@@ -2,7 +2,6 @@
 	<div>
 		<TheNav></TheNav>
 		<TheView></TheView>
-		<AppCard></AppCard>
 	</div>
 </template>
 
