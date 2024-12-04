@@ -1,15 +1,19 @@
 <template>
-	<!-- 네비게이션바 시작 -->
-
-	<!-- 네비게이션바 끝 -->
-
-	<!-- 메인 시작 -->
-
-	<!-- 메인 끝 -->
+	<div>
+		<TheNav></TheNav>
+		<TheView></TheView>
+	</div>
 </template>
 
 <script>
+import TheNav from './components/TheNav.vue';
+import TheView from './components/TheView.vue';
+
 export default {
+	components: {
+		TheNav,
+		TheView,
+	},
 	setup() {
 		return {};
 	},
