@@ -1,5 +1,6 @@
 <template>
-	<BCard
+	<!-- BootstrapVueNext -->
+	<!-- <BCard
 		title="Card Title"
 		img-src="https://picsum.photos/id/25/600/300"
 		img-alt="Image"
@@ -8,11 +9,21 @@
 		style="max-width: 20rem"
 	>
 		<BCardText>
-			Some quick example text to build on the card title and make up the bulk of
-			the card's content.
+			좋아하는 직업을 정하면 평생 단 하루도 일하지 않는 것과 같다. - 공자
 		</BCardText>
-		<BButton href="#" variant="dark">Go somewhere</BButton>
-	</BCard>
+		<BButton href="#" variant="dark">더보기</BButton>
+	</BCard> -->
+
+	<!-- Bootstrap -->
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title red">Card Title</h5>
+			<p class="card-text">
+				좋아하는 직업을 정하면 평생 단 하루도 일하지 않는 것과 같다. - 공자
+			</p>
+			<a href="#" class="btn btn-dark">더보기</a>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -23,4 +34,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.red {
+	color: red !important;
+}
+</style>
