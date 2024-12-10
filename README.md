@@ -6,10 +6,12 @@
 ## 1. Plugin
 - ESLint
 - Prettier
+- BootstrapVueNext
 
 ## 디렉티브
 - 01 
 - 02 Vue3사용하기
 - 03 ESLint, Prettier 설정
-- 04 Vue API
+- 04 Vue의 API
 - 05 Composition API
+- 06 Component
