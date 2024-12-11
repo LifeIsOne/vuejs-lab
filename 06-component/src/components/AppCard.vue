@@ -17,9 +17,8 @@
 	<!-- Bootstrap -->
 	<div class="card">
 		<div class="card-body">
-			{{ $style }}
 			<h5 class="card-title red">Card Title</h5>
-			<p class="card-text" :class="$style.red">
+			<p class="card-text">
 				좋아하는 직업을 정하면 평생 단 하루도 일하지 않는 것과 같다. - 공자
 			</p>
 			<a href="#" class="btn btn-dark">더보기</a>
@@ -28,9 +27,21 @@
 </template>
 
 <script>
+import { ref, useCssModule } from 'vue';
+
 export default {
 	setup() {
-		return {};
+		// script에서 style객체 가져오기
+		// const style = useCssModule();
+		// console.log('style', style);
+
+		// Css
+		const color = ref('red');
+		color.value = 'green';
+
+		return {
+			color,
+		};
 	},
 };
 </script>
@@ -43,8 +54,15 @@ export default {
 </style> -->
 
 <!-- module 속성 -->
-<style module>
+<!-- <style module>
 .red {
 	color: red !important;
+}
+</style> -->
+
+<!-- v-bind() -->
+<style>
+.red {
+	color: v-bind(color) !important;
 }
 </style>
