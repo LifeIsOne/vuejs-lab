@@ -1,5 +1,6 @@
 <template>
 	<!-- BootstrapVueNext -->
+	<BBadge class="mb-2">{{ type === 'news' ? 'News' : 'Notice' }}</BBadge>
 	<BCard
 		:title="title"
 		img-src="https://picsum.photos/id/25/600/300"
@@ -11,6 +12,8 @@
 		<BCardText>
 			{{ contents }}
 		</BCardText>
+		<a v-if="isLike" href="#" class="btn btn-danger" variant="dark">좋아요</a>
+		<a v-else href="#" class="btn btn-outline-danger" variant="dark">좋아요</a>
 		<BButton href="#" variant="dark">더보기</BButton>
 	</BCard>
 
@@ -28,7 +31,24 @@
 
 <script>
 export default {
-	props: ['title', 'contents'],
+	props: {
+		type: {
+			type: String,
+			default: 'news',
+		},
+		title: {
+			type: String,
+			required: true,
+		},
+		contents: {
+			type: String,
+			required: true,
+		},
+		isLike: {
+			type: Boolean,
+			default: false,
+		},
+	},
 
 	setup() {
 		return {};
