@@ -1,7 +1,7 @@
 <template>
 	<!-- BootstrapVueNext -->
-	<!-- <BCard
-		title="Card Title"
+	<BCard
+		:title="title"
 		img-src="https://picsum.photos/id/25/600/300"
 		img-alt="Image"
 		img-top
@@ -9,60 +9,31 @@
 		style="max-width: 20rem"
 	>
 		<BCardText>
-			좋아하는 직업을 정하면 평생 단 하루도 일하지 않는 것과 같다. - 공자
+			{{ contents }}
 		</BCardText>
 		<BButton href="#" variant="dark">더보기</BButton>
-	</BCard> -->
+	</BCard>
 
 	<!-- Bootstrap -->
-	<div class="card">
+	<!-- <div class="card">
 		<div class="card-body">
-			<h5 class="card-title red">Card Title</h5>
+			<h5 class="card-title red">{{ title }}</h5>
 			<p class="card-text">
-				좋아하는 직업을 정하면 평생 단 하루도 일하지 않는 것과 같다. - 공자
+				{{ contents }}
 			</p>
 			<a href="#" class="btn btn-dark">더보기</a>
 		</div>
-	</div>
+	</div> -->
 </template>
 
 <script>
-import { ref, useCssModule } from 'vue';
-
 export default {
+	props: ['title', 'contents'],
+
 	setup() {
-		// script에서 style객체 가져오기
-		// const style = useCssModule();
-		// console.log('style', style);
-
-		// Css
-		const color = ref('red');
-		color.value = 'green';
-
-		return {
-			color,
-		};
+		return {};
 	},
 };
 </script>
 
-<!-- scoped 속성 -->
-<!-- <style scoped>
-.red {
-	color: red !important;
-}
-</style> -->
-
-<!-- module 속성 -->
-<!-- <style module>
-.red {
-	color: red !important;
-}
-</style> -->
-
-<!-- v-bind() -->
-<style>
-.red {
-	color: v-bind(color) !important;
-}
-</style>
+<style></style>
