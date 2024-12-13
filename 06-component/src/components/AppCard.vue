@@ -34,6 +34,9 @@ export default {
 		type: {
 			type: String,
 			default: 'news',
+			validator: value => {
+				return ['news', 'notice'].includes(value);
+			},
 		},
 		title: {
 			type: String,
