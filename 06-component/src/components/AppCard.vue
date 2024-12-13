@@ -12,14 +12,13 @@
 		<BCardText>
 			{{ contents }}
 		</BCardText>
-		<a v-if="isLike" href="#" class="btn btn-danger" variant="dark">좋아요</a>
-		<a v-else href="#" class="btn btn-outline-danger" variant="dark">좋아요</a>
-		<BButton href="#" variant="dark">더보기</BButton>
+		<a v-if="isLike" href="#" class="btn btn-primary" variant="dark">❤︎</a>
+		<a v-else href="#" class="btn btn-outline-primary" variant="dark">♡</a>
 	</BCard>
 
 	<!-- Bootstrap -->
 	<!-- <div class="card">
-		<div class="card-body">
+		<div class="card-body">❤❤
 			<h5 class="card-title red">{{ title }}</h5>
 			<p class="card-text">
 				{{ contents }}
