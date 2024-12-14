@@ -1,6 +1,6 @@
 <template>
 	<!-- BootstrapVueNext -->
-	<BBadge class="mb-2">{{ type === 'news' ? 'News' : 'Notice' }}</BBadge>
+	<BBadge class="mb-2">{{ typeName }}</BBadge>
 	<BCard
 		:title="title"
 		img-src="https://picsum.photos/id/25/600/300"
@@ -12,8 +12,7 @@
 		<BCardText>
 			{{ contents }}
 		</BCardText>
-		<a v-if="isLike" href="#" class="btn btn-primary" variant="dark">❤︎</a>
-		<a v-else href="#" class="btn btn-outline-primary" variant="dark">❤︎</a>
+		<a href="#" class="btn" :class="isLikeClass" variant="dark">❤︎</a>
 	</BCard>
 
 	<!-- Bootstrap -->
@@ -29,6 +28,8 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+
 export default {
 	props: {
 		type: {
@@ -56,9 +57,19 @@ export default {
 			default: () => ({}),
 		},
 	},
-
-	setup() {
-		return {};
+	// setup함수의 첫번째 매개변수로 props를 받을 수 있습니다.
+	setup(props) {
+		console.log('props.title : ', props.title);
+		const isLikeClass = computed(() =>
+			props.isLike ? 'btn-primary' : 'btn-outline-primary',
+		);
+		const typeName = computed(() =>
+			props.type === 'news' ? 'News' : 'Notice',
+		);
+		return {
+			isLikeClass,
+			typeName,
+		};
 	},
 };
 </script>
