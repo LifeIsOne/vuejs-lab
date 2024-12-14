@@ -13,7 +13,7 @@
 			{{ contents }}
 		</BCardText>
 		<a v-if="isLike" href="#" class="btn btn-primary" variant="dark">❤︎</a>
-		<a v-else href="#" class="btn btn-outline-primary" variant="dark">♡</a>
+		<a v-else href="#" class="btn btn-outline-primary" variant="dark">❤︎</a>
 	</BCard>
 
 	<!-- Bootstrap -->
@@ -49,6 +49,11 @@ export default {
 		isLike: {
 			type: Boolean,
 			default: false,
+		},
+		// Reference 타입의 defalut는 기본값을 반환하는 팩토리 함수를 설정해야 합니다.
+		obj: {
+			type: Object,
+			default: () => ({}),
 		},
 	},
 
