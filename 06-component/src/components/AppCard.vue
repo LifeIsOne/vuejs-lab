@@ -11,6 +11,7 @@
 	>
 		<BCardText>
 			{{ contents }}
+			{{ $props.title }}
 		</BCardText>
 		<a href="#" class="btn" :class="isLikeClass" variant="dark">❤︎</a>
 	</BCard>
