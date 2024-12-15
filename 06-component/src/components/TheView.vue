@@ -21,6 +21,9 @@
 							:type="board.type"
 						>
 						</AppCard>
+						<button @click="board.isLike = !board.isLike">
+							좋아요 상태 변경
+						</button>
 					</BCol>
 				</BRow>
 			</BContainer>

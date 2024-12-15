@@ -11,9 +11,15 @@
 	>
 		<BCardText>
 			{{ contents }}
-			{{ $props.title }}
 		</BCardText>
-		<a href="#" class="btn" :class="isLikeClass" variant="dark">❤︎</a>
+		<a
+			href="#"
+			class="btn"
+			:class="isLikeClass"
+			variant="dark"
+			@click="likeToggle"
+			>❤︎</a
+		>
 	</BCard>
 
 	<!-- Bootstrap -->
@@ -67,9 +73,14 @@ export default {
 		const typeName = computed(() =>
 			props.type === 'news' ? 'News' : 'Notice',
 		);
+		const likeToggle = () => {
+			props.isLke = !props.isLike;
+		};
+
 		return {
 			isLikeClass,
 			typeName,
+			likeToggle,
 		};
 	},
 };
