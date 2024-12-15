@@ -64,8 +64,9 @@ export default {
 			default: () => ({}),
 		},
 	},
+	emits: ['likeToggle'],
 	// setup함수의 첫번째 매개변수로 props를 받을 수 있습니다.
-	setup(props) {
+	setup(props, context) {
 		console.log('props.title : ', props.title);
 		const isLikeClass = computed(() =>
 			props.isLike ? 'btn-primary' : 'btn-outline-primary',
@@ -74,7 +75,8 @@ export default {
 			props.type === 'news' ? 'News' : 'Notice',
 		);
 		const likeToggle = () => {
-			props.isLke = !props.isLike;
+			// props.isLke = !props.isLike;
+			context.emit('likeToggle');
 		};
 
 		return {
