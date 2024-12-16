@@ -19,11 +19,9 @@
 							:contents="board.contents"
 							:is-like="board.isLike"
 							:type="board.type"
+							@like-toggle="board.isLike = !board.isLike"
 						>
 						</AppCard>
-						<button @click="board.isLike = !board.isLike">
-							좋아요 상태 변경
-						</button>
 					</BCol>
 				</BRow>
 			</BContainer>
