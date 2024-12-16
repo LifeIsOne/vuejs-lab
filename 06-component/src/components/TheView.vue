@@ -20,6 +20,7 @@
 							:is-like="board.isLike"
 							:type="board.type"
 							@like-toggle="board.isLike = !board.isLike"
+							:obj="obj"
 						>
 						</AppCard>
 					</BCol>
@@ -50,9 +51,15 @@ export default {
 			{ id: 6, title: '제목6', contents: '내용6', isLike: false, type: 'news' },
 		]);
 
+		const obj = reactive({
+			title: 'obj.title',
+			contents: 'obj.contents ',
+		});
+
 		return {
 			board,
 			boards,
+			obj,
 		};
 	},
 };

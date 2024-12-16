@@ -20,6 +20,8 @@
 			@click="likeToggle"
 			>❤︎</a
 		>
+		<br />
+		{{ obj }}
 	</BCard>
 
 	<!-- Bootstrap -->
@@ -76,6 +78,7 @@ export default {
 		);
 		const likeToggle = () => {
 			// props.isLke = !props.isLike;
+			props.obj.title = '하위 컴포넌트에서 변경하기';
 			context.emit('likeToggle');
 		};
 
