@@ -19,7 +19,16 @@
 import { ref } from 'vue';
 
 export default {
-	emits: ['createBoard'],
+	// emits: ['createBoard'],
+	emits: {
+		createBoard: enterdName => {
+			console.log('validator : ', enterdName);
+			if (!enterdName) {
+				return false;
+			}
+			return true;
+		},
+	},
 
 	setup(props, { emit }) {
 		const createBoard = () => {
