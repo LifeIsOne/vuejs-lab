@@ -10,18 +10,24 @@
 		</button> -->
 
 		<!-- CompositionAPI의 setup()의 두 번째 파라미터 context의 emit()속성 이용하기 -->
+		<BFormInput v-model="name" placeholder="Enter your name" />
 		<button class="btn btn-success" @click="createBoard">BUTTON</button>
 	</div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
+	emits: ['createBoard'],
+
 	setup(props, { emit }) {
 		const createBoard = () => {
-			emit('createBoard', 1, 2, 3, 'Library');
+			emit('createBoard', name.value);
 		};
+		const name = ref(''); // 반응형 데이터 선언
 
-		return { createBoard };
+		return { createBoard, name };
 	},
 };
 </script>
