@@ -58,8 +58,8 @@ export default {
 			contents: 'obj.contents ',
 		});
 
-		const createBoard = () => {
-			console.log('createBoard 호출됨');
+		const createBoard = (a, b, c, d) => {
+			console.log('createBoard 호출됨', a, b, c, d);
 		};
 
 		return {

@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<button class="btn btn-primary" @click="$emit('createBoard')">
+		<button
+			class="btn btn-primary"
+			@click="$emit('createBoard', 1, 2, 3, 'Library')"
+		>
 			BUTTON
 		</button>
 	</div>
