@@ -1,6 +1,7 @@
 <template>
 	<main>
 		<div class="container py-5">
+			<BoardCreate @create-board="createBoard"></BoardCreate>
 			<BContainer class="bv-example-row">
 				<BRow class="g-2">
 					<!-- <BRow gutter-y="10"> -->
@@ -20,7 +21,6 @@
 							:is-like="board.isLike"
 							:type="board.type"
 							@like-toggle="board.isLike = !board.isLike"
-							:obj="obj"
 						>
 						</AppCard>
 					</BCol>
@@ -33,8 +33,10 @@
 <script>
 import { reactive } from 'vue';
 import AppCard from './AppCard.vue';
+import BoardCreate from './BoardCreate.vue';
+
 export default {
-	components: { AppCard },
+	components: { AppCard, BoardCreate },
 	setup() {
 		const board = reactive({
 			title: '제목2',
@@ -56,10 +58,15 @@ export default {
 			contents: 'obj.contents ',
 		});
 
+		const createBoard = () => {
+			console.log('createBoard 호출됨');
+		};
+
 		return {
 			board,
 			boards,
 			obj,
+			createBoard,
 		};
 	},
 };

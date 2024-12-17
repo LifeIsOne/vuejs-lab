@@ -20,8 +20,6 @@
 			@click="likeToggle"
 			>❤︎</a
 		>
-		<br />
-		{{ obj }}
 	</BCard>
 
 	<!-- Bootstrap -->
@@ -69,7 +67,7 @@ export default {
 	emits: ['likeToggle'],
 	// setup함수의 첫번째 매개변수로 props를 받을 수 있습니다.
 	setup(props, context) {
-		console.log('props.title : ', props.title);
+		// console.log('props.title : ', props.title);
 		const isLikeClass = computed(() =>
 			props.isLike ? 'btn-primary' : 'btn-outline-primary',
 		);
@@ -78,7 +76,6 @@ export default {
 		);
 		const likeToggle = () => {
 			// props.isLke = !props.isLike;
-			props.obj.title = '하위 컴포넌트에서 변경하기';
 			context.emit('likeToggle');
 		};
 
