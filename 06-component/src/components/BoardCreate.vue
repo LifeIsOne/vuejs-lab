@@ -9,8 +9,20 @@
 			BUTTON
 		</button> -->
 
-		<!-- CompositionAPI의 setup()의 두 번째 파라미터 context의 emit()속성 이용하기 -->
+		<BFormSelect v-model="ex1Selected" :options="ex1Options" />
 
+		<BFormSelect
+			v-model="ex1Selected"
+			:options="ex1Options"
+			size="sm"
+			class="mt-3"
+		/>
+
+		<div class="mt-3">
+			Selected: <strong>{{ ex1Selected }}</strong>
+		</div>
+
+		<!-- CompositionAPI의 setup()의 두 번째 파라미터 context의 emit()속성 이용하기 -->
 		<BFormInput v-model="name" placeholder="Enter your name" />
 		<button class="btn btn-success" @click="createBoard">BUTTON</button>
 	</div>
@@ -41,7 +53,15 @@ export default {
 		};
 		const name = ref(''); // 반응형 데이터 선언
 
-		return { createBoard, name };
+		const ex1Options = [
+			{ value: null, text: 'Please select an option' },
+			{ value: '1', text: 'One' },
+			{ value: '2', text: 'Two' },
+			{ value: '3', text: 'Three' },
+			{ value: '4', text: 'Four' },
+		];
+
+		return { createBoard, name, ex1Options };
 	},
 };
 </script>
