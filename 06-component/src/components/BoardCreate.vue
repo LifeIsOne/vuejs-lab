@@ -1,5 +1,25 @@
 <template>
-	<div>
+	<div class="row">
+		<div class="col col-2">
+			<BFormSelect v-model="ex1Selected" :options="ex1Options" />
+
+			<BFormSelect
+				v-model="ex1Selected"
+				:options="ex1Options"
+				size="sm"
+				class="mt-3"
+			/>
+
+			<div class="mt-3">
+				Selected: <strong>{{ ex1Selected }}</strong>
+			</div>
+		</div>
+		<div class="col col-8">
+			<BFormInput v-model="name" placeholder="Enter your name" />
+		</div>
+		<div class="col col-2">
+			<button class="btn btn-success" @click="createBoard">BUTTON</button>
+		</div>
 		<!-- 하위 컴포넌트에서 상위 컴포넌트 이벤트 발생시키기 -->
 		<!-- 인스턴스 내장된 $emit()메서드 사용 -->
 		<!-- <button
@@ -9,22 +29,7 @@
 			BUTTON
 		</button> -->
 
-		<BFormSelect v-model="ex1Selected" :options="ex1Options" />
-
-		<BFormSelect
-			v-model="ex1Selected"
-			:options="ex1Options"
-			size="sm"
-			class="mt-3"
-		/>
-
-		<div class="mt-3">
-			Selected: <strong>{{ ex1Selected }}</strong>
-		</div>
-
 		<!-- CompositionAPI의 setup()의 두 번째 파라미터 context의 emit()속성 이용하기 -->
-		<BFormInput v-model="name" placeholder="Enter your name" />
-		<button class="btn btn-success" @click="createBoard">BUTTON</button>
 	</div>
 </template>
 
