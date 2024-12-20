@@ -1,18 +1,12 @@
 <template>
 	<div class="row">
 		<div class="col col-2">
-			<BFormSelect v-model="ex1Selected" :options="ex1Options" />
-
-			<BFormSelect
-				v-model="ex1Selected"
-				:options="ex1Options"
-				size="sm"
-				class="mt-3"
-			/>
-
-			<div class="mt-3">
-				Selected: <strong>{{ ex1Selected }}</strong>
-			</div>
+			<select class="form-select" aria-label="Default select example">
+				<option selected>Open this select menu</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
 		</div>
 		<div class="col col-8">
 			<BFormInput v-model="name" placeholder="Enter your name" />
@@ -58,15 +52,7 @@ export default {
 		};
 		const name = ref(''); // 반응형 데이터 선언
 
-		const ex1Options = [
-			{ value: null, text: 'Please select an option' },
-			{ value: '1', text: 'One' },
-			{ value: '2', text: 'Two' },
-			{ value: '3', text: 'Three' },
-			{ value: '4', text: 'Four' },
-		];
-
-		return { createBoard, name, ex1Options };
+		return { createBoard, name };
 	},
 };
 </script>
