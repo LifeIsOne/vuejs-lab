@@ -10,6 +10,7 @@
 		</button> -->
 
 		<!-- CompositionAPI의 setup()의 두 번째 파라미터 context의 emit()속성 이용하기 -->
+
 		<BFormInput v-model="name" placeholder="Enter your name" />
 		<button class="btn btn-success" @click="createBoard">BUTTON</button>
 	</div>
@@ -21,6 +22,10 @@ import { ref } from 'vue';
 export default {
 	// emits: ['createBoard'],
 	emits: {
+		// 유효성 검사 X
+		// createBoard: null,
+
+		// 유효성 검사 입력된 값이 있으면/없으면 = true/false
 		createBoard: enterdName => {
 			console.log('validator : ', enterdName);
 			if (!enterdName) {
