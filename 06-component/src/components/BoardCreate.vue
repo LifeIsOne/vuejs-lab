@@ -2,24 +2,23 @@
 	<div class="row g-3">
 		<div class="col col-2">
 			<select
+				v-model="type"
 				class="form-select bg-dark text-light"
 				aria-label="Default select example"
 			>
-				<option selected>Open this select menu</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+				<option value="news">News</option>
+				<option value="notice">Notice</option>
 			</select>
 		</div>
 		<div class="col col-8">
 			<BFormInput
 				class="form-control bg-dark text-light"
-				v-model="name"
-				placeholder="Enter your name"
+				v-model="title"
+				placeholder="Enter your title"
 			/>
 		</div>
 		<div class="col col d-grid">
-			<button class="btn btn-success" @click="createBoard">BUTTON</button>
+			<button class="btn btn-success" @click="createBoard">추가하기</button>
 		</div>
 		<!-- 하위 컴포넌트에서 상위 컴포넌트 이벤트 발생시키기 -->
 		<!-- 인스턴스 내장된 $emit()메서드 사용 -->
@@ -44,9 +43,10 @@ export default {
 		// createBoard: null,
 
 		// 유효성 검사 입력된 값이 있으면/없으면 = true/false
-		createBoard: enterdName => {
-			console.log('validator : ', enterdName);
-			if (!enterdName) {
+		createBoard: newBoard => {
+			if (!newBoard.type) {
+				return false;
+			} else if (!newBoard.title) {
 				return false;
 			}
 			return true;
@@ -55,11 +55,16 @@ export default {
 
 	setup(props, { emit }) {
 		const createBoard = () => {
-			emit('createBoard', name.value);
+			const newBoard = {
+				type: type.value,
+				title: title.value,
+			};
+			emit('createBoard', title.value);
 		};
-		const name = ref(''); // 반응형 데이터 선언
+		const title = ref(''); // 반응형 데이터 선언
+		const type = ref('news');
 
-		return { createBoard, name };
+		return { createBoard, title, type };
 	},
 };
 </script>
