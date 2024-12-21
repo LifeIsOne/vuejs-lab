@@ -60,9 +60,9 @@ export default {
 			contents: 'obj.contents ',
 		});
 
-		const createBoard = enterdName => {
+		const createBoard = enterdTitle => {
 			console.log('createBoard 호출됨');
-			console.log('enterdName : ', enterdName);
+			console.log('enterdTitle : ', enterdTitle);
 		};
 
 		return {
