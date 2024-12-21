@@ -7,7 +7,8 @@
 		img-alt="Image"
 		img-top
 		tag="article"
-		style="max-width: 20rem"
+		class="bg-dark"
+		style="color: #fff8; border-color: #777"
 	>
 		<BCardText>
 			{{ contents }}

@@ -1,7 +1,10 @@
 <template>
-	<div class="row">
+	<div class="row g-3">
 		<div class="col col-2">
-			<select class="form-select" aria-label="Default select example">
+			<select
+				class="form-select bg-dark text-light"
+				aria-label="Default select example"
+			>
 				<option selected>Open this select menu</option>
 				<option value="1">One</option>
 				<option value="2">Two</option>
@@ -9,9 +12,13 @@
 			</select>
 		</div>
 		<div class="col col-8">
-			<BFormInput v-model="name" placeholder="Enter your name" />
+			<BFormInput
+				class="form-control bg-dark text-light"
+				v-model="name"
+				placeholder="Enter your name"
+			/>
 		</div>
-		<div class="col col-2">
+		<div class="col col d-grid">
 			<button class="btn btn-success" @click="createBoard">BUTTON</button>
 		</div>
 		<!-- 하위 컴포넌트에서 상위 컴포넌트 이벤트 발생시키기 -->
@@ -58,3 +65,8 @@ export default {
 </script>
 
 <style lang="scss" scoped></style>
+<style>
+.bg-dark::placeholder {
+	color: #fff8;
+}
+</style>

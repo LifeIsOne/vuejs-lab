@@ -1,31 +1,33 @@
 <template>
-	<main>
+	<main class="bg-dark text-light">
 		<div class="container py-5">
+			<!-- form 태그들 -->
 			<BoardCreate @create-board="createBoard"></BoardCreate>
-			<BContainer class="bv-example-row">
-				<BRow class="g-2">
-					<!-- <BRow gutter-y="10"> -->
-					<!-- 하드코딩 -->
-					<!-- <BCol cols="4">
+
+			<hr class="my-4" />
+
+			<div class="row g-4">
+				<!-- <BRow gutter-y="10"> -->
+				<!-- 하드코딩 -->
+				<!-- <BCol cols="4">
 						<AppCard title="제목1" contents="내용1"></AppCard>
 					</BCol> -->
-					<!-- 동적 데이터 전달 -->
-					<!-- <BCol cols="4">
+				<!-- 동적 데이터 전달 -->
+				<!-- <BCol cols="4">
 						<AppCard :title="board.title" :contents="board.contents"> </AppCard>
 					</BCol> -->
-					<!-- v-for 디렉티브 사용 -->
-					<BCol cols="4" v-for="board in boards" :key="board.id">
-						<AppCard
-							:title="board.title"
-							:contents="board.contents"
-							:is-like="board.isLike"
-							:type="board.type"
-							@like-toggle="board.isLike = !board.isLike"
-						>
-						</AppCard>
-					</BCol>
-				</BRow>
-			</BContainer>
+				<!-- v-for 디렉티브 사용 -->
+				<div class="col col-4" v-for="board in boards" :key="board.id">
+					<AppCard
+						:title="board.title"
+						:contents="board.contents"
+						:is-like="board.isLike"
+						:type="board.type"
+						@like-toggle="board.isLike = !board.isLike"
+					>
+					</AppCard>
+				</div>
+			</div>
 		</div>
 	</main>
 </template>
