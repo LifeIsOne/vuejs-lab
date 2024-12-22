@@ -28,17 +28,22 @@
 					</AppCard>
 				</div>
 			</div>
+
+			<hr class="my-4" />
+
+			<LabelInput></LabelInput>
 		</div>
 	</main>
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import AppCard from './AppCard.vue';
 import PostCreate from './PostCreate.vue';
+import LabelInput from './LabelInput.vue';
 
 export default {
-	components: { AppCard, PostCreate },
+	components: { AppCard, PostCreate, LabelInput },
 	setup() {
 		const post = reactive({
 			title: '제목2',
@@ -64,11 +69,14 @@ export default {
 			posts.push(newPost);
 		};
 
+		const username = ref('');
+
 		return {
 			post,
 			posts,
 			obj,
 			createPost,
+			username,
 		};
 	},
 };
