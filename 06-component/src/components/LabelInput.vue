@@ -1,6 +1,6 @@
 <template>
 	<label>
-		username
+		{{ label }}
 		<!-- <input v-model="username" type="text" /> -->
 		<input
 			:value="modelValue"
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-	props: ['modelValue'],
+	props: ['modelValue', 'label'],
 	emits: ['update:modelValue'],
 
 	setup() {
