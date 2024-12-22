@@ -63,6 +63,7 @@ export default {
 		const createBoard = newBoard => {
 			console.log('createBoard 호출됨');
 			console.log('newBoard : ', newBoard);
+			boards.push(newBoard);
 		};
 
 		return {

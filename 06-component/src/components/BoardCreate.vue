@@ -59,7 +59,7 @@ export default {
 				type: type.value,
 				title: title.value,
 			};
-			emit('createBoard', title.value);
+			emit('createBoard', newBoard);
 		};
 		const title = ref(''); // 반응형 데이터 선언
 		const type = ref('news');
