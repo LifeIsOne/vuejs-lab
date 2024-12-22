@@ -2,7 +2,7 @@
 	<main class="bg-dark text-light">
 		<div class="container py-5">
 			<!-- form 태그들 -->
-			<BoardCreate @create-board="createBoard"></BoardCreate>
+			<PostCreate @create-post="createPost"></PostCreate>
 
 			<hr class="my-4" />
 
@@ -14,16 +14,16 @@
 					</BCol> -->
 				<!-- 동적 데이터 전달 -->
 				<!-- <BCol cols="4">
-						<AppCard :title="board.title" :contents="board.contents"> </AppCard>
+						<AppCard :title="post.title" :contents="post.contents"> </AppCard>
 					</BCol> -->
 				<!-- v-for 디렉티브 사용 -->
-				<div class="col col-4" v-for="board in boards" :key="board.id">
+				<div class="col col-4" v-for="post in posts" :key="post.id">
 					<AppCard
-						:title="board.title"
-						:contents="board.contents"
-						:is-like="board.isLike"
-						:type="board.type"
-						@like-toggle="board.isLike = !board.isLike"
+						:title="post.title"
+						:contents="post.contents"
+						:is-like="post.isLike"
+						:type="post.type"
+						@like-toggle="post.isLike = !post.isLike"
 					>
 					</AppCard>
 				</div>
@@ -35,24 +35,22 @@
 <script>
 import { reactive } from 'vue';
 import AppCard from './AppCard.vue';
-import BoardCreate from './BoardCreate.vue';
+import PostCreate from './PostCreate.vue';
 
 export default {
-	components: { AppCard, BoardCreate },
+	components: { AppCard, PostCreate },
 	setup() {
-		const board = reactive({
+		const post = reactive({
 			title: '제목2',
 			contents: '내용2',
 		});
 
 		// prettier-ignore
-		const boards = reactive([
+		const posts = reactive([
 			{ id: 1, title: '제목1', contents: '내용1', isLike: true, type: 'news' },
 			{ id: 2, title: '제목2', contents: '내용2', isLike: false, type: 'notice' },
 			{ id: 3, title: '제목3', contents: '내용3', isLike: true, type: 'news' },
 			{ id: 4, title: '제목4', contents: '내용4', isLike: true, type: 'news' },
-			{ id: 5, title: '제목5', contents: '내용5', isLike: true, type: 'notice' },
-			{ id: 6, title: '제목6', contents: '내용6', isLike: false, type: 'news' },
 		]);
 
 		const obj = reactive({
@@ -60,17 +58,17 @@ export default {
 			contents: 'obj.contents ',
 		});
 
-		const createBoard = newBoard => {
-			console.log('createBoard 호출됨');
-			console.log('newBoard : ', newBoard);
-			boards.push(newBoard);
+		const createPost = newPost => {
+			console.log('createPost 호출됨');
+			console.log('newPost : ', newPost);
+			posts.push(newPost);
 		};
 
 		return {
-			board,
-			boards,
+			post,
+			posts,
 			obj,
-			createBoard,
+			createPost,
 		};
 	},
 };

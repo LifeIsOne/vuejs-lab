@@ -18,13 +18,13 @@
 			/>
 		</div>
 		<div class="col col d-grid">
-			<button class="btn btn-success" @click="createBoard">추가하기</button>
+			<button class="btn btn-success" @click="createPost">추가하기</button>
 		</div>
 		<!-- 하위 컴포넌트에서 상위 컴포넌트 이벤트 발생시키기 -->
 		<!-- 인스턴스 내장된 $emit()메서드 사용 -->
 		<!-- <button
 			class="btn btn-primary"
-			@click="$emit('createBoard', 1, 2, 3, 'Library')"
+			@click="$emit('createPost', 1, 2, 3, 'Library')"
 		>
 			BUTTON
 		</button> -->
@@ -37,16 +37,16 @@
 import { ref } from 'vue';
 
 export default {
-	// emits: ['createBoard'],
+	// emits: ['createpost'],
 	emits: {
 		// 유효성 검사 X
-		// createBoard: null,
+		// createpost: null,
 
 		// 유효성 검사 입력된 값이 있으면/없으면 = true/false
-		createBoard: newBoard => {
-			if (!newBoard.type) {
+		createpost: newpost => {
+			if (!newpost.type) {
 				return false;
-			} else if (!newBoard.title) {
+			} else if (!newpost.title) {
 				return false;
 			}
 			return true;
@@ -54,17 +54,20 @@ export default {
 	},
 
 	setup(props, { emit }) {
-		const createBoard = () => {
-			const newBoard = {
+		const createPost = () => {
+			const newpost = {
 				type: type.value,
 				title: title.value,
 			};
-			emit('createBoard', newBoard);
+			emit('createPost', newpost);
+			// 초기화
+			type.value = 'news';
+			title.value = '';
 		};
 		const title = ref(''); // 반응형 데이터 선언
 		const type = ref('news');
 
-		return { createBoard, title, type };
+		return { createPost, title, type };
 	},
 };
 </script>
