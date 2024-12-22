@@ -31,7 +31,11 @@
 
 			<hr class="my-4" />
 
-			<LabelInput></LabelInput>
+			<LabelInput v-model="username"></LabelInput>
+			<!-- <LabelInput
+				:model-value="username"
+				@update:model-value="value => (username = value)"
+			></LabelInput> -->
 		</div>
 	</main>
 </template>

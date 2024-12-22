@@ -4,7 +4,7 @@
 		<!-- <input v-model="username" type="text" /> -->
 		<input
 			:value="modelValue"
-			@input="event => ($emit('update:modelValue'), event.target.value)"
+			@input="event => $emit('update:modelValue', event.target.value)"
 			type="text"
 		/>
 	</label>
