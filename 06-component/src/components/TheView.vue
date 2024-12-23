@@ -38,10 +38,9 @@
 			<LabelInput
 				v-model="username"
 				label="username"
-				class="non-class"
-				id="아이디"
-				data-id="data"
-				hi="hahaha"
+				class="parent-class"
+				style="color: #f00"
+				id="parent-id "
 			></LabelInput>
 			<!-- <LabelTitle v-model:title="username" label="username-2"></LabelTitle>
 			<Username
