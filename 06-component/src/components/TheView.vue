@@ -51,7 +51,7 @@ import AppCard from './AppCard.vue';
 import PostCreate from './PostCreate.vue';
 import LabelInput from './LabelInput.vue';
 import LabelTitle from './LabelTitle.vue';
-import Username from './Username.vue';
+import Username from './UsernameInput.vue';
 
 export default {
 	components: { AppCard, PostCreate, LabelInput, LabelTitle, Username },
