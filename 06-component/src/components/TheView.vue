@@ -36,7 +36,7 @@
 				@update:model-value="value => (username = value)"
 			></LabelInput> -->
 			<LabelInput v-model="username" label="username"></LabelInput>
-			<LabelTitle v-model="username" label="username"></LabelTitle>
+			<LabelTitle v-model:title="username" label="username-2"></LabelTitle>
 		</div>
 	</main>
 </template>

@@ -9,16 +9,16 @@
 import { computed } from 'vue';
 
 export default {
-	props: ['modelValue', 'label'],
-	emits: ['update:modelValue'],
+	props: ['title', 'label'],
+	emits: ['update:title'],
 
 	setup(props, context) {
 		const value = computed({
 			get() {
-				return props.modelValue;
+				return props.title;
 			},
 			set(newValue) {
-				context.emit('update:modelValue', newValue);
+				context.emit('update:title', newValue);
 			},
 		});
 		return { value };
