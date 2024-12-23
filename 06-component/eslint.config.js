@@ -22,9 +22,9 @@ export default [
 		plugins: {
 			prettier,
 		},
+		// prettier-ignore
+		// : prettier 비활성화
 		rules: {
-			// prettier-ignore
-			// : prettier 비활성화
 			'prettier/prettier': [
 				'error',
 				{
@@ -38,7 +38,8 @@ export default [
 					arrowParens: 'avoid', // 화살표 함수에서 매개변수가 하나일 때 () 생략
 				},
 			],
-			'no-unused-vars': 'off', // 사용되지 않는 변수 경고,에러 비활성화
+			'no-unused-vars': 'off', 						// 사용되지 않는 변수 등록
+			'vue/no-unused-components': 'off',	// 사용하지 않는 컴포넌트 등록 허용.
 		},
 	},
 ];

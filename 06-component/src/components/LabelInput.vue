@@ -3,7 +3,7 @@
 		{{ label }}
 		<!-- <input v-model="username" type="text" /> -->
 		<!-- :value="modelValue"
-    @input="event => $emit('update:modelValue', event.target.value)" -->
+				@input="event => $emit('update:modelValue', event.target.value)" -->
 		<input v-model="value" type="text" />
 	</label>
 </template>

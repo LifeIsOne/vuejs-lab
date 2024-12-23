@@ -35,12 +35,19 @@
 				:model-value="username"
 				@update:model-value="value => (username = value)"
 			></LabelInput> -->
-			<LabelInput v-model="username" label="username"></LabelInput>
-			<LabelTitle v-model:title="username" label="username-2"></LabelTitle>
+			<LabelInput
+				v-model="username"
+				label="username"
+				class="non-class"
+				id="아이디"
+				data-id="data"
+				hi="hahaha"
+			></LabelInput>
+			<!-- <LabelTitle v-model:title="username" label="username-2"></LabelTitle>
 			<Username
 				v-model:firstname="firstname"
 				v-model:lastname="lastname"
-			></Username>
+			></Username> -->
 		</div>
 	</main>
 </template>
