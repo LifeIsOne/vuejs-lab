@@ -31,11 +31,12 @@
 
 			<hr class="my-4" />
 
-			<LabelInput v-model="username" label="username"></LabelInput>
 			<!-- <LabelInput
 				:model-value="username"
 				@update:model-value="value => (username = value)"
 			></LabelInput> -->
+			<LabelInput v-model="username" label="username"></LabelInput>
+			<LabelTitle v-model="username" label="username"></LabelTitle>
 		</div>
 	</main>
 </template>
@@ -45,9 +46,10 @@ import { reactive, ref } from 'vue';
 import AppCard from './AppCard.vue';
 import PostCreate from './PostCreate.vue';
 import LabelInput from './LabelInput.vue';
+import LabelTitle from './LabelTitle.vue';
 
 export default {
-	components: { AppCard, PostCreate, LabelInput },
+	components: { AppCard, PostCreate, LabelInput, LabelTitle },
 	setup() {
 		const post = reactive({
 			title: '제목2',
