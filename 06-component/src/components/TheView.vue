@@ -37,6 +37,10 @@
 			></LabelInput> -->
 			<LabelInput v-model="username" label="username"></LabelInput>
 			<LabelTitle v-model:title="username" label="username-2"></LabelTitle>
+			<Username
+				v-model:firstname="firstname"
+				v-model:lastname="lastname"
+			></Username>
 		</div>
 	</main>
 </template>
@@ -47,9 +51,10 @@ import AppCard from './AppCard.vue';
 import PostCreate from './PostCreate.vue';
 import LabelInput from './LabelInput.vue';
 import LabelTitle from './LabelTitle.vue';
+import Username from './Username.vue';
 
 export default {
-	components: { AppCard, PostCreate, LabelInput, LabelTitle },
+	components: { AppCard, PostCreate, LabelInput, LabelTitle, Username },
 	setup() {
 		const post = reactive({
 			title: '제목2',
@@ -76,6 +81,8 @@ export default {
 		};
 
 		const username = ref('');
+		const firstname = ref('');
+		const lastname = ref('');
 
 		return {
 			post,
@@ -83,6 +90,8 @@ export default {
 			obj,
 			createPost,
 			username,
+			firstname,
+			lastname,
 		};
 	},
 };
