@@ -1,16 +1,11 @@
 <template>
 	<div>
-		<MyButton></MyButton>
+		<button class="btn btn-secondary" type="button">MY BUTTON</button>
 	</div>
 </template>
 
 <script>
-import MyButton from './MyButton.vue';
 export default {
-	components: {
-		MyButton,
-	},
-
 	setup() {
 		return {};
 	},
@@ -18,8 +13,3 @@ export default {
 </script>
 
 <style lang="scss" scoped></style>
-<style>
-* {
-	background: #000c;
-}
-</style>
