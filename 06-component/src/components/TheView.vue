@@ -1,7 +1,9 @@
 <template>
-	<div>
-		<MyButton></MyButton>
-	</div>
+	<main>
+		<div class="container py-5">
+			<MyButton></MyButton>
+		</div>
+	</main>
 </template>
 
 <script>
@@ -19,7 +21,7 @@ export default {
 
 <style lang="scss" scoped></style>
 <style>
-* {
-	background: #000c;
+body {
+	background: #2c3338;
 }
 </style>
