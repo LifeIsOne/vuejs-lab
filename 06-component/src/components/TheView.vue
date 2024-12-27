@@ -1,20 +1,25 @@
 <template>
 	<main>
 		<div class="container py-5">
-			<MyButton></MyButton>
+			<MyButton @click="helloWorld"></MyButton>
 		</div>
 	</main>
 </template>
 
 <script>
 import MyButton from './MyButton.vue';
+
 export default {
 	components: {
 		MyButton,
 	},
 
 	setup() {
-		return {};
+		const helloWorld = () => {
+			alert('Hello Wolrd!');
+		};
+
+		return { helloWorld };
 	},
 };
 </script>
