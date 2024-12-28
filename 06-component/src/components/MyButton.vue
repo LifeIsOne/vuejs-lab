@@ -11,10 +11,12 @@ export default {
 	inheritAttrs: false,
 
 	setup(props, context) {
-		console.log('context.attrs: ', context.attrs);
-		console.log('class	: ', context.attrs.class);
-		console.log('id		: ', context.attrs.id);
-		console.log('onClick	: ', context.attrs.onClick);
+		// console.log('context.attrs: ', context.attrs);
+		// console.log('class	: ', context.attrs.class);
+		// console.log('id		: ', context.attrs.id);
+		// console.log('onClick	: ', context.attrs.onClick);
+
+		// context.attrs.onClick();
 
 		return {};
 	},
