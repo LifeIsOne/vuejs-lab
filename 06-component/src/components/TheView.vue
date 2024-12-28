@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<div class="container py-5">
-			<MyButton @click="helloWorld"></MyButton>
+			<MyButton class="my-button" id="my-button" @click="helloWorld"></MyButton>
 		</div>
 	</main>
 </template>
