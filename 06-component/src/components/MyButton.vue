@@ -7,7 +7,13 @@
 <script>
 export default {
 	inheritAttrs: false,
-	setup() {
+
+	setup(props, context) {
+		console.log('context.attrs: ', context.attrs);
+		console.log('class	: ', context.attrs.class);
+		console.log('id		: ', context.attrs.id);
+		console.log('onClick	: ', context.attrs.onClick);
+
 		return {};
 	},
 };
