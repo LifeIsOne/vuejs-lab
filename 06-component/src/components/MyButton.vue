@@ -1,6 +1,8 @@
 <template>
 	<div class="bg-dark p-3">
-		<button class="btn btn-secondary" type="button">MY BUTTON</button>
+		<button class="btn btn-secondary" type="button" v-bind="$attrs">
+			MY BUTTON
+		</button>
 	</div>
 </template>
 
