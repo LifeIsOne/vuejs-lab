@@ -2,7 +2,7 @@
 	<label class="form-class text-secondary" id="child-id">
 		{{ label }}
 	</label>
-	<input v-model="value" type="text" class="form-control" />
+	<input v-model="value" v-bind="$attrs" type="text" class="form-control" />
 </template>
 
 <script>
