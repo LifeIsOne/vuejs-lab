@@ -1,12 +1,8 @@
 <template>
-	<label
-		class="child-class text-secondary"
-		style="border: 1px solid #fff"
-		id="child-id"
-	>
+	<label class="form-class text-secondary" id="child-id">
 		{{ label }}
 	</label>
-	<input v-model="value" type="text" />
+	<input v-model="value" type="text" class="form-control" />
 </template>
 
 <script>
