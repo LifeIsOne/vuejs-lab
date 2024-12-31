@@ -1,6 +1,7 @@
 <template>
 	<main>
 		<div class="container py-5">
+			<!-- <MyButton class="my-button" id="my-button" @click="helloWorld"></MyButton> -->
 			<MyButton class="my-button" id="my-button" @click="helloWorld"></MyButton>
 			<LabelInput label="Name" non-id="정의되지 않은 id"></LabelInput>
 		</div>

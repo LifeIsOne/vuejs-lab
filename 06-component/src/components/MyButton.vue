@@ -1,6 +1,7 @@
 <template>
 	<div class="bg-dark p-3">
-		<button class="btn btn-secondary" type="button" v-bind="$attrs">
+		<!-- <button class="btn btn-secondary" type="button" v-bind="$attrs">MY BUTTON</button> -->
+		<button class="btn btn-secondary" type="button" @click="helloWorld">
 			MY BUTTON
 		</button>
 	</div>
@@ -8,7 +9,8 @@
 
 <script>
 export default {
-	inheritAttrs: false,
+	// inheritAttrs: false,
+	emits: ['click'],
 
 	setup(props, context) {
 		// console.log('context.attrs: ', context.attrs);
@@ -17,8 +19,10 @@ export default {
 		// console.log('onClick	: ', context.attrs.onClick);
 
 		// context.attrs.onClick();
-
-		return {};
+		const helloWorld = () => {
+			context.emit('click');
+		};
+		return { helloWorld };
 	},
 };
 </script>
