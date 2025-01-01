@@ -6,6 +6,7 @@
 ## 1. Plugin
 - ESLint
 - Prettier
+- Bootstrap 5
 - BootstrapVueNext
 
 ## 디렉티브
@@ -15,3 +16,8 @@
 - 04 Vue의 API
 - 05 Composition API
 - 06 Component
+  - SFC
+  - Prop 바인딩
+  - Event / emit 이벤트 전달
+  - Non-Prop 속성
+  - Slot API
