@@ -1,6 +1,6 @@
 <template>
 	<button class="fancy-btn">
-		<slot></slot>
+		<slot>default click</slot>
 	</button>
 </template>
 
