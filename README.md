@@ -9,7 +9,7 @@
 - Bootstrap 5
 - BootstrapVueNext
 
-## 디렉티브
+## 2. 디렉티브
 - 01 
 - 02 Vue3사용하기
 - 03 ESLint, Prettier 설정
