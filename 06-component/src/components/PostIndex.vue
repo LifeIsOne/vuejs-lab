@@ -10,7 +10,7 @@
 				<!-- <BRow gutter-y="10"> -->
 				<!-- 하드코딩 -->
 				<!-- <BCol cols="4">
-						<AppCard title="제목1" contents="내용1"></AppCard>
+						<PostItem title="제목1" contents="내용1"></PostItem>
 					</BCol> -->
 				<!-- 동적 데이터 전달 -->
 				<!-- <BCol cols="4">
@@ -18,14 +18,14 @@
 					</BCol> -->
 				<!-- v-for 디렉티브 사용 -->
 				<div class="col col-4" v-for="post in posts" :key="post.id">
-					<AppCard
+					<PostItem
 						:title="post.title"
 						:contents="post.contents"
 						:is-like="post.isLike"
 						:type="post.type"
 						@like-toggle="post.isLike = !post.isLike"
 					>
-					</AppCard>
+					</PostItem>
 				</div>
 			</div>
 
@@ -53,14 +53,14 @@
 
 <script>
 import { reactive, ref } from 'vue';
-import AppCard from './AppCard.vue';
+import PostItem from './PostItem.vue';
 import PostCreate from './PostCreate.vue';
 import LabelInput from './LabelInput.vue';
 import LabelTitle from './LabelTitle.vue';
 import Username from './UsernameInput.vue';
 
 export default {
-	components: { AppCard, PostCreate, LabelInput, LabelTitle, Username },
+	components: { PostItem, PostCreate, LabelInput, LabelTitle, Username },
 	setup() {
 		const post = reactive({
 			title: '제목2',
