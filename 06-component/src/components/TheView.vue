@@ -13,6 +13,8 @@
 			>
 			<FancyButton></FancyButton>
 
+			<hr style="color: #fff" />
+
 			<AppCard></AppCard>
 		</div>
 	</main>
