@@ -12,6 +12,8 @@
 				<span style="color: #34f">하시오</span></FancyButton
 			>
 			<FancyButton></FancyButton>
+
+			<AppCard></AppCard>
 		</div>
 	</main>
 </template>
@@ -20,12 +22,14 @@
 import MyButton from './MyButton.vue';
 import LabelInput from './LabelInput.vue';
 import FancyButton from './FancyButton.vue';
+import AppCard from '@/components/AppCard.vue';
 
 export default {
 	components: {
 		MyButton,
 		LabelInput,
 		FancyButton,
+		AppCard,
 	},
 
 	setup() {
