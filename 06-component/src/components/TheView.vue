@@ -15,7 +15,12 @@
 
 			<hr style="color: #fff" />
 
-			<AppCard></AppCard>
+			<AppCard>
+				<template v-slot:header>title1</template>
+				<template v-slot:default>content1</template>
+				<!-- <template v-slot>content2</template> -->
+				<template v-slot:footer>footer1</template>
+			</AppCard>
 		</div>
 	</main>
 </template>
