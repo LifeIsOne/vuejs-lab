@@ -16,10 +16,13 @@
 			<hr style="color: #fff" />
 
 			<AppCard>
-				<template v-slot:header>title1</template>
-				<template v-slot:default>content1</template>
-				<!-- <template v-slot>content2</template> -->
-				<template v-slot:footer>footer1</template>
+				<!-- <template v-slot:header>title1</template>
+				<template v-slot>content2</template>
+				<template v-slot:footer>footer1</template> -->
+				<!-- `v-solt` 단축표현 -->
+				<template #header>title1</template>
+				<template #default>content1</template>
+				<template #footer>footer1</template>
 			</AppCard>
 		</div>
 	</main>
