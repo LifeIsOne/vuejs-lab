@@ -1,13 +1,13 @@
 <template>
 	<div class="card">
 		<div class="card-header">
-			<slot name="header">#HEADER</slot>
+			<slot name="header" header-msg="헤더 메시지">#HEADER</slot>
 		</div>
 		<div class="card-body">
 			<slot :child-msg hello-world="Hello World !">#BODY</slot>
 		</div>
 		<div class="card-footer text-muted">
-			<slot name="footer">#FOOTER</slot>
+			<slot name="footer" footer-msg="푸터 메시지">#FOOTER</slot>
 		</div>
 	</div>
 </template>
