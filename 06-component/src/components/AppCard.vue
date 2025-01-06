@@ -13,7 +13,15 @@
 </template>
 
 <script>
-export default {};
+import { ref } from 'vue';
+
+export default {
+	setup() {
+		const childMsg = ref('하위 컴포넌트 메시지');
+
+		return { childMsg };
+	},
+};
 </script>
 
 <style lang="scss" scoped></style>

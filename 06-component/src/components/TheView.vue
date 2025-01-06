@@ -25,10 +25,13 @@
 				<!-- <template #default>content1</template> -->
 				<!-- <template #footer>footer1</template> -->
 
-				<!-- defalut slot 암시적 처리 -->
-				<!-- 암시적으로 defalut slot 처리 -->
+				<!-- default slot 암시적 처리 -->
+				<!-- 암시적으로 default slot 처리 -->
 
-				<template #[slotArgs]>동적 title</template>
+				<!-- `v-slot`전달인자 동적으로 변경하기 -->
+				<!-- <template #[slotArgs]>동적 title</template> -->
+
+				<template #default>Default {{ parentMsg }} {{ childMasg }}</template>
 			</AppCard>
 		</div>
 	</main>
@@ -54,8 +57,9 @@ export default {
 			alert('Hello Wolrd!');
 		};
 		const slotArgs = ref('header');
+		const parentMsg = ref('상위 컴포넌트 메시지');
 
-		return { helloWorld, slotArgs };
+		return { helloWorld, slotArgs, parentMsg };
 	},
 };
 </script>
