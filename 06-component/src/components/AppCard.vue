@@ -4,7 +4,7 @@
 			<slot name="header">#HEADER</slot>
 		</div>
 		<div class="card-body">
-			<slot>#BODY</slot>
+			<slot :child-msg hello-world="Hello World !">#BODY</slot>
 		</div>
 		<div class="card-footer text-muted">
 			<slot name="footer">#FOOTER</slot>
