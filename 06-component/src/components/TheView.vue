@@ -31,9 +31,8 @@
 				<!-- `v-slot`전달인자 동적으로 변경하기 -->
 				<!-- <template #[slotArgs]>동적 title</template> -->
 
-				<template #default="obj">
-					{{ obj }}
-					Default {{ parentMsg }} {{ childMasg }}
+				<template #default="{ childMsg }">
+					Default {{ parentMsg }} {{ childMsg }}
 				</template>
 			</AppCard>
 		</div>
