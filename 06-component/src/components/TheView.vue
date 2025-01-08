@@ -11,7 +11,13 @@
 				<h1>클릭</h1>
 				<span style="color: #34f">하시오</span></FancyButton
 			>
+
 			<FancyButton v-slot="{ fancyMsg }"> {{ fancyMsg }}</FancyButton>
+			<!-- <FancyButton>
+				<template v-slot="{ fancyMsg }">
+					{{ fancyMsg }}
+				</template>
+			</FancyButton> -->
 
 			<hr style="color: #fff" />
 
@@ -36,13 +42,19 @@
 				</template>
 
 				<template #default="{ childMsg }">
-					Default {{ parentMsg }} {{ childMsg }}
+					Default
+					<br />
+					{{ parentMsg }}
+					<br />
+					{{ childMsg }}
 				</template>
 
 				<template #footer="{ footerMsg }">
 					{{ footerMsg }}
 				</template>
 			</AppCard>
+			<hr />
+			<AppCard>게시글입니다</AppCard>
 		</div>
 	</main>
 </template>
