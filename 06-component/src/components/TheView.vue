@@ -11,7 +11,7 @@
 				<h1>클릭</h1>
 				<span style="color: #34f">하시오</span></FancyButton
 			>
-			<FancyButton></FancyButton>
+			<FancyButton v-slot="{ fancyMsg }"> {{ fancyMsg }}</FancyButton>
 
 			<hr style="color: #fff" />
 
