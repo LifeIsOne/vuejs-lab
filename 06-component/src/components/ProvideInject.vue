@@ -3,6 +3,7 @@
 		<div class="card">
 			<div class="card-header">ProvideInject Component</div>
 			<div class="card-body">
+				<button v-on:click="count++">Click</button>
 				<ChildComponent></ChildComponent>
 			</div>
 		</div>
@@ -26,7 +27,7 @@ export default {
 		provide('ref-msg', refMsg);
 		provide('count', count);
 
-		return { ChildComponent };
+		return { count };
 	},
 };
 </script>
