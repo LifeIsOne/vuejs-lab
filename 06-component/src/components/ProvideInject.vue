@@ -23,7 +23,7 @@ export default {
 		const refMsg = ref('reference message');
 		const count = ref(10);
 
-		provide('static-msg', staticMsg);
+		// provide('static-msg', staticMsg);
 		provide('ref-msg', refMsg);
 		provide('count', count);
 
