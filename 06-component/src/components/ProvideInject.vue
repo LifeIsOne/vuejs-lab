@@ -22,9 +22,14 @@ export default {
 		const staticMsg = 'static message';
 		const refMsg = ref('reference message');
 		const count = ref(10);
+		// 1. 데이터를 변경하는 함수 만들기
+		const updateRefMsg = appendRefMsg => {
+			refMsg.value = refMsg.value + appendRefMsg;
+		};
 
 		// provide('static-msg', staticMsg);
-		provide('ref-msg', refMsg);
+		// 2. 데이터를 변경하는 함수 제공하기
+		provide('ref-msg', { refMsg, updateRefMsg });
 		provide('count', count);
 
 		return { count };
