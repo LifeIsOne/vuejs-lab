@@ -17,9 +17,11 @@ export default {
 		const staticMsg = inject('static-msg', '🫥default message🫥');
 		const { refMsg, updateRefMsg } = inject('ref-msg');
 		const count = inject('count');
+
+		updateRefMsg('🫶');
+
 		// Injector에서 변경하기 X
-		// refMsg.value = refMsg.value + '!';
-		updateRefMsg('!');
+		refMsg.value = refMsg.value + '🤬';
 
 		return { staticMsg, refMsg, count };
 	},

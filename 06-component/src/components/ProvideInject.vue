@@ -12,7 +12,7 @@
 
 <script>
 import ChildComponent from '@/components/ChildComponent.vue';
-import { provide, ref } from 'vue';
+import { provide, readonly, ref } from 'vue';
 
 export default {
 	components: {
@@ -29,7 +29,7 @@ export default {
 
 		// provide('static-msg', staticMsg);
 		// 2. 데이터를 변경하는 함수 제공하기
-		provide('ref-msg', { refMsg, updateRefMsg });
+		provide('ref-msg', { refMsg: readonly(refMsg), updateRefMsg });
 		provide('count', count);
 
 		return { count };
