@@ -4,6 +4,7 @@
 			<div class="card-header">ProvideInject Component</div>
 			<div class="card-body">
 				<button v-on:click="count++">Click</button>
+				<p>appMessage : {{ appMessage }}</p>
 				<ChildComponent></ChildComponent>
 			</div>
 		</div>
@@ -12,7 +13,7 @@
 
 <script>
 import ChildComponent from '@/components/ChildComponent.vue';
-import { provide, readonly, ref } from 'vue';
+import { inject, provide, readonly, ref } from 'vue';
 import { myInjectionKey } from './Keys';
 
 export default {
@@ -36,7 +37,9 @@ export default {
 		// Symbol 키를 사용하여 데이터 제공
 		provide(myInjectionKey, refMsg);
 
-		return { count };
+		const appMessage = inject('app-message');
+
+		return { count, appMessage };
 	},
 };
 </script>
