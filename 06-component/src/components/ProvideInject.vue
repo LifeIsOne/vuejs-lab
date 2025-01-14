@@ -41,6 +41,9 @@ export default {
 
 		return { count, appMessage };
 	},
+	mounted() {
+		console.log('this.msg :', this.msg);
+	},
 };
 </script>
 
