@@ -39,10 +39,13 @@ export default {
 
 		const appMessage = inject('app-message');
 
+		// Vue3의 생명 주기 훅 테스트
+		console.log('setup()s this :', this);
+
 		return { count, appMessage };
 	},
 	mounted() {
-		console.log('this.msg :', this.msg);
+		console.log('this.msg  :', this.msg);
 	},
 };
 </script>
