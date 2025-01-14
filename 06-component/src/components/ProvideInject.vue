@@ -13,6 +13,7 @@
 <script>
 import ChildComponent from '@/components/ChildComponent.vue';
 import { provide, readonly, ref } from 'vue';
+import { myInjectionKey } from './Keys';
 
 export default {
 	components: {
@@ -31,6 +32,9 @@ export default {
 		// 2. 데이터를 변경하는 함수 제공하기
 		provide('ref-msg', { refMsg: readonly(refMsg), updateRefMsg });
 		provide('count', count);
+
+		// Symbol 키를 사용하여 데이터 제공
+		provide(myInjectionKey, refMsg);
 
 		return { count };
 	},
