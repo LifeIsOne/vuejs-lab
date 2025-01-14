@@ -39,8 +39,8 @@ export default {
 
 		const appMessage = inject('app-message');
 
-		// Vue3의 생명 주기 훅 테스트
-		console.log('setup()s this :', this);
+		// Vue3 `setup()`에서 this 사용해보기
+		const msg = inject('msg');
 
 		return { count, appMessage };
 	},
