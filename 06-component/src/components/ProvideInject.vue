@@ -39,8 +39,9 @@ export default {
 
 		const appMessage = inject('app-message');
 
-		// Vue3 `setup()`에서 this 사용해보기
+		// Provide/Inject로 App-level에서 제공하기
 		const msg = inject('msg');
+		console.log('msg :', msg);
 
 		return { count, appMessage };
 	},
