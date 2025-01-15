@@ -4,7 +4,14 @@
 
 <script>
 export default {
+	created() {
+		console.log('created');
+	},
+	beforeCreate() {
+		console.log('beforeCreate');
+	},
 	setup() {
+		console.log('setup');
 		return {};
 	},
 };
