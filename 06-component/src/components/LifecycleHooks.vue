@@ -3,17 +3,27 @@
 </template>
 
 <script>
+import { onBeforeMount, onMounted } from 'vue';
+
 export default {
-	created() {
-		console.log('created');
-	},
-	beforeCreate() {
-		console.log('beforeCreate');
-	},
 	setup() {
 		console.log('setup');
+
+		onMounted(() => {
+			console.log('onMounted');
+		});
+		onBeforeMount(() => {
+			console.log('onBeforeMount');
+		});
+
 		return {};
 	},
+	// beforeCreate() {
+	// 	console.log('beforeCreate');
+	// },
+	// created() {
+	// 	console.log('created');
+	// },
 };
 </script>
 
