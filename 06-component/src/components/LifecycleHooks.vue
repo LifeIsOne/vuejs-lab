@@ -1,12 +1,12 @@
 <template>
 	<div class="contaion py-5">
 		<input ref="inputRef" type="text" value="hello world" />
-		<LifecycleChild></LifecycleChild>
+		<!-- <LifecycleChild></LifecycleChild> -->
 	</div>
 </template>
 
 <script>
-import { onBeforeMount, onMounted, ref } from 'vue';
+import { onBeforeMount, onBeforeUpdate, onMounted, onUpdated, ref } from 'vue';
 import LifecycleChild from '@/components/LifecycleChild.vue';
 
 export default {
@@ -14,17 +14,28 @@ export default {
 		LifecycleChild,
 	},
 	setup() {
-		console.log('setup');
+		// # Mount Hooks
+		// console.log('setup');
 		const inputRef = ref(null);
 
-		onMounted(() => {
-			console.log('onMounted', inputRef.value);
-		});
-		onBeforeMount(() => {
-			console.log('onBeforeMount', inputRef.value);
+		// onMounted(() => {
+		// 	console.log('onMounted', inputRef.value);
+		// });
+		// onBeforeMount(() => {
+		// 	console.log('onBeforeMount', inputRef.value);
+		// });
+
+		// # Update Hooks
+		const msg = ref('');
+
+		onBeforeUpdate(() => {
+			console.log('onBeforeUpdate');
 		});
 
-		return { inputRef };
+		onUpdated(() => {
+			console.log('onUpdated');
+		});
+		return { inputRef, msg };
 	},
 	// beforeCreate() {
 	// 	console.log('beforeCreate');

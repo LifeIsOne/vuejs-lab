@@ -40,6 +40,7 @@ export default [
 			],
 			'no-unused-vars': 'off', 						// 사용되지 않는 변수 등록
 			'vue/no-unused-components': 'off',	// 사용하지 않는 컴포넌트 등록 허용.
+			'no-undef': 'off',									// 정의되지 않은 변수 사용중 에러해제
 		},
 	},
 ];
