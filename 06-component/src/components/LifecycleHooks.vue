@@ -1,7 +1,9 @@
 <template>
 	<div class="contaion py-5">
 		<input ref="inputRef" type="text" value="hello world" />
-		<!-- <LifecycleChild></LifecycleChild> -->
+		<hr />
+		<button @click="visible = !visible">Toggle Child</button>
+		<LifecycleChild v-if="visible"></LifecycleChild>
 		<p id="msg">{{ msg }}</p>
 	</div>
 </template>
@@ -15,9 +17,12 @@ export default {
 		LifecycleChild,
 	},
 	setup() {
-		// # Mount Hooks
-		// console.log('setup');
 		const inputRef = ref(null);
+		const msg = ref('');
+		const visible = ref(false);
+
+		// # Mount Hook
+		// console.log('setup');
 
 		// onMounted(() => {
 		// 	console.log('onMounted', inputRef.value);
@@ -26,25 +31,23 @@ export default {
 		// 	console.log('onBeforeMount', inputRef.value);
 		// });
 
-		// # Update Hooks
-		const msg = ref('');
+		// # Update Hook
+		// onBeforeUpdate(() => {
+		// 	console.log('onBeforeUpdate : ', msg.value);
+		// 	console.log(
+		// 		'`DOM` Content :',
+		// 		document.querySelector('#msg').textContent,
+		// 	);
+		// });
 
-		onBeforeUpdate(() => {
-			console.log('onBeforeUpdate : ', msg.value);
-			console.log(
-				'`DOM` Content :',
-				document.querySelector('#msg').textContent,
-			);
-		});
-
-		onUpdated(() => {
-			console.log('onUpdated : ', msg.value);
-			console.log(
-				'`DOM` Content :',
-				document.querySelector('#msg').textContent,
-			);
-		});
-		return { inputRef, msg };
+		// onUpdated(() => {
+		// 	console.log('onUpdated : ', msg.value);
+		// 	console.log(
+		// 		'`DOM` Content :',
+		// 		document.querySelector('#msg').textContent,
+		// 	);
+		// });
+		return { inputRef, msg, visible };
 	},
 	// beforeCreate() {
 	// 	console.log('beforeCreate');

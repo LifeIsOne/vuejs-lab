@@ -1,13 +1,16 @@
 <template>
-	<div></div>
+	<div class="card">
+		<div class="card-body">LifecycleChild</div>
+	</div>
 </template>
 
 <script>
-import { onBeforeMount, onMounted } from 'vue';
+import { onBeforeMount, onBeforeUnmount, onMounted, onUnmounted } from 'vue';
 
 export default {
 	setup() {
-		console.log('[Child] setup');
+		// # Mount Hook
+		// console.log('[Child] setup');
 
 		onBeforeMount(() => {
 			console.log('[Child] onBeforeMount');
@@ -15,6 +18,15 @@ export default {
 
 		onMounted(() => {
 			console.log('[Child] onMounted');
+		});
+
+		// # Destruct Hook
+		onBeforeUnmount(() => {
+			console.log('[Child] onBeforeUnmount');
+		});
+
+		onUnmounted(() => {
+			console.log('[Child] onUnmounted');
 		});
 
 		return {};
