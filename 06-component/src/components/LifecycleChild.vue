@@ -1,6 +1,7 @@
 <template>
 	<div class="card">
 		<div class="card-body">LifecycleChild</div>
+		<input id="input" type="text" />
 	</div>
 </template>
 
@@ -23,10 +24,12 @@ export default {
 		// # Destruct Hook
 		onBeforeUnmount(() => {
 			console.log('[Child] onBeforeUnmount');
+			console.log(document.querySelector('#input'));
 		});
 
 		onUnmounted(() => {
 			console.log('[Child] onUnmounted');
+			console.log(document.querySelector('#input'));
 		});
 
 		return {};
