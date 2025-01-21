@@ -2,6 +2,7 @@
 	<div class="contaion py-5">
 		<input ref="inputRef" type="text" value="hello world" />
 		<!-- <LifecycleChild></LifecycleChild> -->
+		<p id="msg">{{ msg }}</p>
 	</div>
 </template>
 
@@ -29,11 +30,19 @@ export default {
 		const msg = ref('');
 
 		onBeforeUpdate(() => {
-			console.log('onBeforeUpdate');
+			console.log('onBeforeUpdate : ', msg.value);
+			console.log(
+				'`DOM` Content :',
+				document.querySelector('#msg').textContent,
+			);
 		});
 
 		onUpdated(() => {
-			console.log('onUpdated');
+			console.log('onUpdated : ', msg.value);
+			console.log(
+				'`DOM` Content :',
+				document.querySelector('#msg').textContent,
+			);
 		});
 		return { inputRef, msg };
 	},
