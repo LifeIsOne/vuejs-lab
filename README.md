@@ -16,10 +16,10 @@
 - 04 Vue의 API
 - 05 Composition API
 - 06 Component
-  - SFC
+  - SFC (Single File Component)
   - Prop 바인딩
   - Event / emit 이벤트 전달
   - Non-Prop 속성
   - Slot API
-  - Provide/Inject
+  - Provide / Inject
   - Lifecycle Hooks
