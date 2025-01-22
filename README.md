@@ -21,3 +21,5 @@
   - Event / emit 이벤트 전달
   - Non-Prop 속성
   - Slot API
+  - Provide/Inject
+  - Lifecycle Hooks
