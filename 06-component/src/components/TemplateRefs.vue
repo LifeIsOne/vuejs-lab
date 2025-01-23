@@ -1,6 +1,9 @@
 <template>
-	<div class="container py-5"></div>
-	<input ref="input" type="text" />
+	<div class="container py-5">
+		<input ref="input" type="text" />
+		<p>{{ input }}</p>
+		<p v-if="input">{{ input.value }}</p>
+	</div>
 </template>
 
 <script>
