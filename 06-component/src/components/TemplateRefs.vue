@@ -14,6 +14,7 @@ export default {
 		console.log('setup: ', input.value);
 
 		onMounted(() => {
+			input.value.value = '안녕하세요✋';
 			console.log('onMounted: ', input.value);
 		});
 
