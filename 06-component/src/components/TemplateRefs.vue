@@ -15,7 +15,14 @@
 	</div>
 	<hr />
 	<ul>
-		<li v-for="fruit in fruits" :key="fruit" ref="itemRefs">{{ fruit }}</li>
+		<!-- <li v-for="fruit in fruits" :key="fruit" ref="itemRefs">{{ fruit }}</li> -->
+		<li
+			v-for="fruit in fruits"
+			:key="fruit"
+			:ref="el => itemRefs.push(el.textContent)"
+		>
+			{{ fruit }}
+		</li>
 	</ul>
 </template>
 
@@ -33,7 +40,8 @@ export default {
 			input.value.value = '안녕하세요✋';
 			console.log('onMounted: ', input.value);
 
-			itemRefs.value.forEach(item => console.log('item: ', item.textContest));
+			// itemRefs.value.forEach(item => console.log('item: ', item.textContent));
+			itemRefs.value.forEach(item => console.log('item: ', item));
 		});
 
 		const fruits = ref(['사과', '오렌지', '포도']);
