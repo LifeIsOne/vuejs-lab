@@ -13,6 +13,10 @@
 		<h5>`$refs.input === input`</h5>
 		<p v-if="input">{{ $refs.input === input }}</p>
 	</div>
+	<hr />
+	<ul>
+		<li v-for="fruit in fruits" :key="fruit" ref="itemRefs">{{ fruit }}</li>
+	</ul>
 </template>
 
 <script>
@@ -28,9 +32,14 @@ export default {
 		onMounted(() => {
 			input.value.value = '안녕하세요✋';
 			console.log('onMounted: ', input.value);
+
+			itemRefs.value.forEach(item => console.log('item: ', item.textContest));
 		});
 
-		return { input };
+		const fruits = ref(['사과', '오렌지', '포도']);
+		const itemRefs = ref([]);
+
+		return { input, fruits, itemRefs };
 	},
 };
 </script>
