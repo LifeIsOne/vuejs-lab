@@ -2,7 +2,16 @@
 	<div class="container py-5">
 		<input ref="input" type="text" />
 		<p>{{ input }}</p>
+
+		<h5>`v-if`디렉티브를 이용하여 input.value</h5>
 		<p v-if="input">{{ input.value }}</p>
+
+		<!-- `$refs`로 `ref`에 접근 -->
+		<h5>`$refs.input.value`</h5>
+		<p v-if="input">{{ $refs.input.value }}</p>
+		<!-- 동일한 값인지 확인 -->
+		<h5>`$refs.input === input`</h5>
+		<p v-if="input">{{ $refs.input === input }}</p>
 	</div>
 </template>
 
