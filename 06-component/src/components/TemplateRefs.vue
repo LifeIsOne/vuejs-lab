@@ -40,7 +40,7 @@ export default {
 			input.value.value = '안녕하세요✋';
 			console.log('onMounted: ', input.value);
 
-			// itemRefs.value.forEach(item => console.log('item: ', item.textContent));
+			itemRefs.value.forEach(item => console.log('item: ', item.textContent));
 			itemRefs.value.forEach(item => console.log('item: ', item));
 		});
 
