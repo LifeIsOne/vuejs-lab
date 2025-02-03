@@ -24,12 +24,20 @@
 			{{ fruit }}
 		</li>
 	</ul>
+
+	<hr />
+	<TemplateRefsChild ref="child"></TemplateRefsChild>
 </template>
 
 <script>
 import { onMounted, ref } from 'vue';
+import TemplateRefsChild from '@/components/TemplateRefsChild.vue';
 
 export default {
+	components: {
+		TemplateRefsChild,
+	},
+
 	setup() {
 		const input = ref(null);
 
@@ -40,14 +48,20 @@ export default {
 			input.value.value = '안녕하세요✋';
 			console.log('onMounted: ', input.value);
 
-			itemRefs.value.forEach(item => console.log('item: ', item.textContent));
+			// itemRefs.value.forEach(item => console.log('item: ', item.textContent));
 			itemRefs.value.forEach(item => console.log('item: ', item));
+
+			// 자식 컴포넌트에서 템플릿 참조
+			console.log('child.msg: ', child.value.msg);
+			child.value.sayHello();
 		});
 
 		const fruits = ref(['사과', '오렌지', '포도']);
 		const itemRefs = ref([]);
 
-		return { input, fruits, itemRefs };
+		const child = ref(null);
+
+		return { input, fruits, itemRefs, child };
 	},
 };
 </script>
