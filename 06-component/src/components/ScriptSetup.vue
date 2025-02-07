@@ -1,16 +1,9 @@
 <template>
-	<div></div>
+	<div>{{ msg }}</div>
 </template>
 
 <script setup>
-console.log('안녕하세요');
-</script>
-<script>
-export default {
-	setup() {
-		console.log('안녕하세요');
-	},
-};
+const msg = '안녕하세요';
 </script>
 
 <style lang="scss" scoped></style>
