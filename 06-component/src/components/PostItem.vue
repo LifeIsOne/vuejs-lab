@@ -35,48 +35,58 @@
 	</div> -->
 </template>
 
-<script setup>
+<script>
 import { computed } from 'vue';
 
-defineProps({
-	type: {
-		type: String,
-		default: 'news',
-		validator: value => {
-			return ['news', 'notice'].includes(value);
+export default {
+	props: {
+		type: {
+			type: String,
+			default: 'news',
+			validator: value => {
+				return ['news', 'notice'].includes(value);
+			},
+		},
+		title: {
+			type: String,
+			required: true,
+		},
+		contents: {
+			type: String,
+			// required: true,
+		},
+		isLike: {
+			type: Boolean,
+			default: false,
+		},
+		// Reference 타입의 defalut는 기본값을 반환하는 팩토리 함수를 설정해야 합니다.
+		obj: {
+			type: Object,
+			default: () => ({}),
 		},
 	},
-	title: {
-		type: String,
-		required: true,
-	},
-	contents: {
-		type: String,
-		// required: true,
-	},
-	isLike: {
-		type: Boolean,
-		default: false,
-	},
-	// Reference 타입의 defalut는 기본값을 반환하는 팩토리 함수를 설정해야 합니다.
-	obj: {
-		type: Object,
-		default: () => ({}),
-	},
-});
-defineEmits(['likeToggle']);
+	emits: ['likeToggle'],
+	// setup함수의 첫번째 매개변수로 props를 받을 수 있습니다.
+	setup(props, context) {
+		// console.log('props.title : ', props.title);
+		const isLikeClass = computed(() =>
+			props.isLike ? 'btn-primary' : 'btn-outline-primary',
+		);
+		const typeName = computed(() =>
+			props.type === 'news' ? 'News' : 'Notice',
+		);
+		const likeToggle = () => {
+			// props.isLke = !props.isLike;
+			context.emit('likeToggle');
+		};
 
-{
-	// console.log('props.title : ', props.title);
-	const isLikeClass = computed(() =>
-		props.isLike ? 'btn-primary' : 'btn-outline-primary',
-	);
-	const typeName = computed(() => (props.type === 'news' ? 'News' : 'Notice'));
-	const likeToggle = () => {
-		// props.isLke = !props.isLike;
-		context.emit('likeToggle');
-	};
-}
+		return {
+			isLikeClass,
+			typeName,
+			likeToggle,
+		};
+	},
+};
 </script>
 
 <style></style>
