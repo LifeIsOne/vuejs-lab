@@ -38,6 +38,8 @@
 <script setup>
 import { computed } from 'vue';
 
+// Before Vue ver 3.2에는 `defineProps()`와 `defineEmits()`는 변수에 할당해야 했음 예 :
+// const props = defineProps({
 defineProps({
 	type: {
 		type: String,
