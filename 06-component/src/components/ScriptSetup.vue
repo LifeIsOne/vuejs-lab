@@ -33,6 +33,10 @@ const alertHello = () => {
 	alert('안녕하세요👋');
 };
 const child = ref(null);
+
+defineExpose({
+	msg,
+});
 </script>
 
 <style lang="scss" scoped></style>

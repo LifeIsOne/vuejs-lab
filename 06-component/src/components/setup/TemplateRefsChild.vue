@@ -14,6 +14,11 @@ const msg = ref('안녕하세요 :]'); // 반응형 데이터 선언
 const sayHello = () => {
 	alert(msg.value);
 };
+
+defineExpose({
+	msg: msg,
+	sayHello: sayHello,
+});
 </script>
 
 <style lang="scss" scoped></style>
