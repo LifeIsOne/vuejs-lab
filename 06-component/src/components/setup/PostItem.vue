@@ -15,7 +15,7 @@
 		</BCardText>
 		<a
 			href="#"
-			class="btn"
+			class="btn btn-outline-secondary"
 			:class="isLikeClass"
 			variant="dark"
 			@click="likeToggle"
@@ -38,9 +38,11 @@
 <script setup>
 import { computed } from 'vue';
 
+console.log('Script Setup');
+
 // Before Vue ver 3.2에는 `defineProps()`와 `defineEmits()`는 변수에 할당해야 했음 예 :
 // const props = defineProps({
-defineProps({
+const props = defineProps({
 	type: {
 		type: String,
 		default: 'news',
@@ -54,7 +56,7 @@ defineProps({
 	},
 	contents: {
 		type: String,
-		// required: true,
+		required: true,
 	},
 	isLike: {
 		type: Boolean,
@@ -66,19 +68,16 @@ defineProps({
 		default: () => ({}),
 	},
 });
-defineEmits(['likeToggle']);
+const emit = defineEmits(['likeToggle']);
 
-{
-	// console.log('props.title : ', props.title);
-	const isLikeClass = computed(() =>
-		props.isLike ? 'btn-primary' : 'btn-outline-primary',
-	);
-	const typeName = computed(() => (props.type === 'news' ? 'News' : 'Notice'));
-	const likeToggle = () => {
-		// props.isLke = !props.isLike;
-		context.emit('likeToggle');
-	};
-}
+// console.log('props.title : ', props.title);
+
+const isLikeClass = computed(() =>
+	props.isLike ? 'btn-primary' : 'btn-outline-primary',
+);
+const typeName = computed(() => (props.type === 'news' ? 'News' : 'Notice'));
+const likeToggle = () => {
+	// props.isLke = !props.isLike;
+	context.emit('likeToggle');
+};
 </script>
-
-<style></style>

@@ -16,7 +16,22 @@
 			contents="내용1"
 			:is-like="true"
 		></PostItem>
+
+		<PostItem
+			type="new"
+			title="제목1"
+			contents="내용1"
+			:is-like="true"
+		></PostItem>
+
+		<PostItem
+			type="new"
+			title="제목1"
+			contents="내용1"
+			:is-like="true"
+		></PostItem>
 		<hr />
+		<!-- 자식 컴포넌트 참조 -->
 		<TemplateRefsChild ref="child"></TemplateRefsChild>
 		<template v-if="child">{{ child.msg }}</template>
 	</div>
