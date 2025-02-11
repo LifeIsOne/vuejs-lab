@@ -35,6 +35,10 @@
 	</div> -->
 </template>
 
+<script>
+console.log('Nomal Script');
+</script>
+
 <script setup>
 import { computed } from 'vue';
 
