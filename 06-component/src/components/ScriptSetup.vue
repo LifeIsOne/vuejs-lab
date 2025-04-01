@@ -11,21 +11,21 @@
 		</div>
 		<!-- 컴포넌트 -->
 		<PostItem
-			type="new"
+			type="news"
 			title="제목1"
 			contents="내용1"
 			:is-like="true"
 		></PostItem>
 
 		<PostItem
-			type="new"
+			type="news"
 			title="제목1"
 			contents="내용1"
 			:is-like="true"
 		></PostItem>
 
 		<PostItem
-			type="new"
+			type="news"
 			title="제목1"
 			contents="내용1"
 			:is-like="true"

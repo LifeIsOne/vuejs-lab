@@ -1,0 +1,29 @@
+{
+  "editor.minimap.enabled": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "markdown",
+    "html"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.tabSize": 2,
+  "jetbrainsKeymap.promptV3Features": false,
+  "git.confirmSync": false,
+  "emmet.variables": {
+    "lang": "ko"
+  },
+  "editor.formatOnSave": true,
+  // JS에 Emmet 활성화
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.settings.applyToAllProfiles": [
+  
+  ]
+}
