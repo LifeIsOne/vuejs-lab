@@ -19,21 +19,24 @@
 
 		<PostItem
 			type="news"
-			title="제목1"
-			contents="내용1"
+			title="제목2"
+			contents="내용2"
 			:is-like="true"
 		></PostItem>
 
 		<PostItem
 			type="news"
-			title="제목1"
-			contents="내용1"
+			title="제목3"
+			contents="내용3"
 			:is-like="true"
 		></PostItem>
 		<hr />
 		<!-- 자식 컴포넌트 참조 -->
 		<TemplateRefsChild ref="child"></TemplateRefsChild>
 		<template v-if="child">{{ child.msg }}</template>
+
+		<hr />
+		<MyButton class="parent-class"></MyButton>
 	</div>
 </template>
 
@@ -41,6 +44,7 @@
 import { ref } from 'vue';
 import PostItem from '@/components/setup/PostItem.vue';
 import TemplateRefsChild from '@/components/setup/TemplateRefsChild.vue';
+import MyButton from './setup/MyButton.vue';
 
 const msg = '안녕하세요';
 const refMsg = ref('');
