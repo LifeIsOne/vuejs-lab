@@ -20,4 +20,9 @@ export default defineConfig({
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
+	// 서버 실행시 브라우저 열기
+	server: {
+		port: 5173,
+		open: true,
+	},
 });
