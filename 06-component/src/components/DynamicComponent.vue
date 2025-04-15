@@ -11,15 +11,19 @@
 		</button>
 		<hr />
 		<component :is="currentComp"></component>
+		<p>{{ refObj }}</p>
+		<p>{{ shallowRefObj }}</p>
 	</div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, shallowRef } from 'vue';
 import DynamicApple from './DynamicApple.vue';
 import DynamicBanana from './DynamicBanana.vue';
 
-const currentComp = ref(DynamicApple);
+const currentComp = shallowRef(DynamicApple);
+const refObj = ref({ name: 'matthew' });
+const shallowRefObj = shallowRef({ name: 'matthew' });
 const changeCurrentComp = comp => (currentComp.value = comp);
 </script>
 
