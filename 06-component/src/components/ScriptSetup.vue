@@ -45,6 +45,7 @@ import { ref } from 'vue';
 import PostItem from '@/components/setup/PostItem.vue';
 import TemplateRefsChild from '@/components/setup/TemplateRefsChild.vue';
 import MyButton from './setup/MyButton.vue';
+import axios from 'axios';
 
 const msg = '안녕하세요';
 const refMsg = ref('');
@@ -56,6 +57,10 @@ const child = ref(null);
 defineExpose({
 	msg,
 });
+const response = await axios(
+	'https://dummy.restapiexample.com/api/v1/employees',
+);
+console.log('response: ', response);
 </script>
 
 <style lang="scss" scoped></style>
