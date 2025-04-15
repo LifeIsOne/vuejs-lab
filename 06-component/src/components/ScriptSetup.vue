@@ -61,6 +61,13 @@ const response = await axios(
 	'https://dummy.restapiexample.com/api/v1/employees',
 );
 console.log('response: ', response);
+
+// async function callApi() {
+// 	const response = await axios(
+// 		'https://dummy.restapiexample.com/api/v1/employees',
+// 	);
+// }
+callApi();
 </script>
 
 <style lang="scss" scoped></style>
